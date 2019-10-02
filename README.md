@@ -1,2 +1,2 @@
 # Gestion_clinica
-Desarrollo de un software de gesti on para una clinica medica
+Desarrollo de un software de gestión para una clinica medica
