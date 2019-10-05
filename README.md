@@ -2,7 +2,7 @@
 
 **REQUISITOS DEL SISTEMA:** Desarrollar un software de gestión para una clínica médica.
 
-**REQUISITOS FUNCIONALES DEL SISTEMA: ** El sistema deberá crear un menú que permita realizar lo siguiente:
+**REQUISITOS FUNCIONALES DEL SISTEMA:** El sistema deberá crear un menú que permita realizar lo siguiente:
 
   1. Buscar la existencia de un paciente. 
      Si encuentra el paciente mostrará los datos del mismo.
