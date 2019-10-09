@@ -28,7 +28,7 @@
     · Direccion
     · Telefono
 
-  En caso de no encontrar al paciente, el sistema indicará error.
+    En caso de no encontrar al paciente, el sistema indicará error.
 
   3. Mostrar el tratamiento del paciente. 
 
