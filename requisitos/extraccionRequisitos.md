@@ -19,3 +19,16 @@ Vamos a registrar los datos relativos a los pacientes, las citas, el tratamiento
 		.Fecha nacimiento
 		.Publico/Privado
 		.Telefono
+
+	· Cita
+		·Hora
+		·Fecha
+		·Motivo de la cita
+		·Paciente citado
+		·Doctor asignado
+
+	· Tratamiento
+		· Fecha comienzo
+		· Dosis
+		· Fecha finalizacion
+
