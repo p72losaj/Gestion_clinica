@@ -15,4 +15,7 @@ Vamos a registrar los datos relativos a los pacientes, las citas, el tratamiento
 	· Pacientes
 		·Nombre
 		·Apellidos
-		· 
+		·Direccion
+		.Fecha nacimiento
+		.Publico/Privado
+		.Telefono
