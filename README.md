@@ -6,11 +6,13 @@
 
   1. Buscar la existencia de un paciente. 
 
-     El sistema pedirá al usuario el nombre y los apellidos del paciente. Una vez el usuario introduce los datos pedidos, el sistema imprimirá lo siguiente:
+    El sistema pedirá al usuario el nombre y los apellidos del paciente. 
 
-      -Si encuentra el paciente mostrará los datos del mismo.
+    Una vez el usuario introduce los datos pedidos, el sistema imprimirá lo siguiente:
 
-      -Si no encuentra al paciente, el sistema pedirá los datos del nuevo paciente. Posteriormente, guardará los datos de dicho paciente.
+    -Si encuentra el paciente mostrará los datos del mismo.
+
+    -Si no encuentra al paciente, el sistema pedirá los datos del nuevo paciente. Posteriormente, guardará los datos de dicho paciente.
 
   2. Mostrar los datos de la cita con un paciente. 
 
