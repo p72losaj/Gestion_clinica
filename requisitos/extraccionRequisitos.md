@@ -4,11 +4,15 @@ Vamos a registrar los datos relativos a los pacientes, las citas, el tratamiento
 
 **Partes interesadas**
 
-	. Administradores
+	. Desarrolladores
+	
+	. Secretaría 
 
-	Juan Jose Gil Luna
+	. Doctores
 
-	Jaime Lorenzo Sanchez
+**Datos que gestiona el sistema:**
 
-	Pedro Jesus
-	.
+	· Pacientes
+		·Nombre
+		·Apellidos
+		· 
