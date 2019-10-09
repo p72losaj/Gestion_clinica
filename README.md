@@ -19,14 +19,14 @@
     Si el sistema encuentra al usuario, mostrará los siguientes datos:
 
     ** Datos del cliente: **
-  · Nombre
-  · Apellidos
-  · Fecha nacimiento
-  · Publico o privado
-  · Direccion
-  · Telefono
+    · Nombre
+    · Apellidos
+    · Fecha nacimiento
+    · Publico o privado
+    · Direccion
+    · Telefono
 
-  En caso de no encontrar al paciente, el sistema indicará error.      
+  En caso de no encontrar al paciente, el sistema indicará error.
 
   3. Mostrar el tratamiento del paciente. 
 
@@ -34,7 +34,7 @@
 
   4. Mostrar el historial médico de un paciente.
 
-**Requisitos no funcionales:** 
+**Requisitos no funcionales:**
   
 
 ** Datos del cliente: **
