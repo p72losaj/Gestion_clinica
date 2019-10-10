@@ -22,7 +22,7 @@
 
 **Flujos alternativos**:
 
-1.a. Si el sistema no tiene la suficiente cantidad de almacenamiento, muestra una ventana informando que no queda espacio de almacenamiento para introducir un nuevo paciente con un botón de aceptar, el cual el usuario de presionar y volverá el programa a la pantalla principal del programa.
-4.a. Si los campos obligatorios no están rellenados, el sistema muestra una nueva ventana con un boton de aceptar y un mensaje 'Se necesitan introducir los datos obligatorios'. El usuario pulsa aceptar y el sistema vuelve a mostrar la ventana de introducir nuevo paciente.
+1.a. Si el sistema no tiene la suficiente cantidad de almacenamiento, muestra una ventana informando que no queda espacio de almacenamiento para introducir un nuevo paciente con un botón de aceptar, el cual el usuario de presionar y volverá el programa a la pantalla principal del programa. 
+4.a. Si los campos obligatorios no están rellenados, el sistema muestra una nueva ventana con un boton de aceptar y un mensaje 'Se necesitan introducir los datos obligatorios'. El usuario pulsa aceptar y el sistema vuelve a mostrar la ventana de introducir nuevo paciente. 
 4.b. Si los datos del paciente introducidos están duplicados, el sistema muestra una nueva ventana con un botón de aceptar y con un mensaje 'El nuevo paciente es un paciente ya existente.'. Posteriormente, el usuario pulsa aceptar y el sistema sale al menu principal.
 
