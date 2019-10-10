@@ -8,7 +8,7 @@
 
 	Como administrador quiero añadir los datos de un nuevo paciente.
 
-**Validación: **
+**Validación:**
 
 	· Se debe permitir introducir datos sobre cualquier paciente.
 
