@@ -1,8 +1,8 @@
-**ID**: 01 **Nombre:**Añadir nuevo paciente
+**ID**: 01 **Nombre:** Añadir nuevo paciente
 
-**Prioridad**(1 al 10): 9  **Iteracion:**1
+**Prioridad:** 9  **Iteracion:** 1
 
-**Responsable**: Doctor
+**Responsable:** Doctor
 
 **Descripcion:**
 
