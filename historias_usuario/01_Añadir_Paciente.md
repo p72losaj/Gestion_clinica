@@ -12,8 +12,4 @@
 
 	· Se debe permitir introducir datos sobre cualquier paciente.
 
-	· Debe permitir introducir datos de la cita en horario no ocupado.
-
-	· Debe permitir introducir datos de cualquier medicamento.
-
 	
