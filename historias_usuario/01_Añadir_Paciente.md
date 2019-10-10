@@ -1,15 +1,21 @@
-**ID**: 01 **Nombre:** Añadir nuevo paciente
+**ID**: 01
+**Nombre**: Añadir nuevo paciente
 
-**Prioridad:** 9  **Iteracion:** 1
+**Prioridad** (de 1 a 10): 9
+**Iteracion**: 1
 
-**Responsable:** Doctor
+**Responsable**: Doctor
 
-**Descripcion:**
+#### Descripcion
 
-	Como administrador quiero añadir los datos de un nuevo paciente.
+	Como *Doctor* quiero *añadir los datos* de un *nuevo paciente*.
 
-**Validación:**
+#### Validación
 
-	· Se debe permitir introducir datos sobre cualquier paciente.
+* Los datos del paciente deben de ser registrados.
+* Se comprueba que los datos introducidos tienen el formato correcto.
+* Muestra un error si los campos obligatorios están vacíos.
+* Se comprueba que los datos no son duplicados.
+* Se verifica que se ha sido registrado el paciente.
 
 	
