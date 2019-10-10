@@ -18,5 +18,5 @@
 
 **Flujos alternativos**:
 
-4.a. Si falla la ejecución del programa, se muestra un mensaje de error.
+1.a. Si falla la ejecución del programa, se muestra un mensaje de error.
 
