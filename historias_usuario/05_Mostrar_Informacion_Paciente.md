@@ -12,4 +12,10 @@
 
 	· Se debe localizar cualquier paciente.
 
-	· Se debe mostrar la información completa del paciente.
+	· Se debe mostrar la información completa del paciente:
+
+		1. Datos del paciente
+
+		2. Cita del paciente
+
+		3. Tratamiento del paciente
