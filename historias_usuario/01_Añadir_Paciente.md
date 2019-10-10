@@ -8,7 +8,7 @@
 
 #### Descripcion
 
-	Como *Doctor* quiero *añadir los datos* de un *nuevo paciente*.
+Como *Doctor* quiero *añadir los datos* de un *nuevo paciente*.
 
 #### Validación
 
