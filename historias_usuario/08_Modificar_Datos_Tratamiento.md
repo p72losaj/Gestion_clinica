@@ -1,15 +1,21 @@
-**ID**: 08 **Nombre:**Modificar datos del tratamiento de un paciente
+**ID**: 08 
+**Nombre**: Modificar datos del tratamiento de un paciente
 
-**Prioridad**(1 al 10): 9  **Iteracion:**1
+**Prioridad** (de 1 a 10): 9 
+**Iteracion**:1
 
 **Responsable**: Doctor
 
-**Descripcion:**
+### Descripcion:
 
-	Como administrador quiero modificar los datos del tratamiento de un paciente.
+Como *Doctor* quiero *modificar el tratamiento* de un *paciente registrado* en el sistema
 
-**Validación: **
+#### Validación 
 
-	· Se debe localizar cualquier paciente.
-
-	· Debe permitirse modificar cualquier dato del tratamiento del paciente.
+* Se debe localizar cualquier paciente
+* El resultado de la búsqueda es único
+* Es necesario utilizar el nombre completo
+* Muestra error si no encuentra al paciente
+* Debe permitir modificar cualquier dato del tratamiento del paciente
+* Se comprueba que los datos del tratamiento no son duplicados
+* Se verifica que se han sido modificados los datos del tratamiento del paciente

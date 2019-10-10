@@ -1,21 +1,18 @@
-**ID**: 05 **Nombre:**Mostrar información del paciente
+**ID**: 05 
+**Nombre**: Mostrar información de un paciente
 
-**Prioridad**(1 al 10): 9  **Iteracion:**1
+**Prioridad** (de 1 a 10): 9 
+**Iteracion**:1
 
 **Responsable**: Doctor
 
-**Descripcion:**
+### Descripcion:
 
-	Como administrador quiero mostrar la información de un paciente.
+Como *Doctor* quiero *mostrar la información* de un *paciente registrado* en el sistema
 
-**Validación: **
+#### Validación 
 
-	· Se debe localizar cualquier paciente.
-
-	· Se debe mostrar la información completa del paciente:
-
-		1. Datos del paciente
-
-		2. Cita del paciente
-
-		3. Tratamiento del paciente
+* Se debe localizar cualquier paciente
+* El resultado de la búsqueda es único
+* Muestra un error si no encuentra al paciente
+* Muestra toda la información en el sistema sobre el paciente

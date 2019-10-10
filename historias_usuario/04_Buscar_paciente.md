@@ -1,22 +1,19 @@
+**ID**: 04 
+**Nombre**: Buscar paciente por nombre y apellidos
 
-**ID**: 04 **Nombre:**Buscar paciente por nombre y apellidos
-
-**Prioridad**(1 al 10): 9  **Iteracion:**1
+**Prioridad** (de 1 a 10): 9 
+**Iteracion**:1
 
 **Responsable**: Doctor
 
-**Descripcion:**
+### Descripcion:
 
-	Como administrador quiero buscar los datos de un paciente para consultar su información y las operaciones posibles sobre el mismo
+Como *Doctor* quiero *buscar los datos* de un *paciente*
 
-**Validación: **
+#### Validación 
 
-	· Se debe localizar cualquier paciente.
-
-	· Los resultados de la búsqueda pueden ser 0 o muchos pacientes.
-
-	· Es necesario utilizar el nombre completo.
-
-	· Se deben mostrar todos los datos del paciente.
-
-	· Se deben mostrar las operaciones posibles sobre el paciente.
+* Se debe localizar cualquier paciente
+* El resultado de la búsqueda es único
+* Es necesario utilizar el nombre completo
+* Muestra error si no encuentra al paciente
+* Se deben mostrar las operaciones disponibles sobre el paciente

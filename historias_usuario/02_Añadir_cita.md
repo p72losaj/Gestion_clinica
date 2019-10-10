@@ -1,15 +1,19 @@
-**ID**: 02 **Nombre:**Añadir cita
+**ID**: 02 
+**Nombre**: Añadir cita
 
-**Prioridad**(1 al 10): 9  **Iteracion:**1
+**Prioridad** (de 1 a 10): 9 
+**Iteracion**:1
 
 **Responsable**: Doctor
 
-**Descripcion:**
+### Descripcion:
 
-	Como administrador quiero añadir una cita a un nuevo paciente
+Como *Doctor* quiero *añadir los datos de la cita* de un *nuevo paciente*
 
-**Validación: **
+#### Validación 
 
-	· Se debe permitir introducir los datos de la cita.
-
-	· Es necesario crear la cita en un horario (día/hora de la cita) no ocupado.
+* Se debe permitir introducir los datos de la cita
+* Se comprueba que los datos introducidos tienen el formato correcto
+* Muestra un error si los campos obligatorios están vacíos
+* Se comprueba que los datos no son duplicados
+* Se verifica que ha sido registrada la cita

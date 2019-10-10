@@ -1,15 +1,16 @@
-**ID**: 03 **Nombre:**Mostrar Lista Pacientes
+**ID**: 03 
+**Nombre**: Mostrar Lista Pacientes
 
-**Prioridad**(1 al 10): 9  **Iteracion:**1
+**Prioridad** (de 1 a 10): 9 
+**Iteracion**:1
 
 **Responsable**: Doctor
 
-**Descripcion:**
+### Descripcion:
 
-	Como administrador quiero mostrar una lista de los pacientes registrados en el sistema.
+Como *Doctor* quiero *mostrar una lista* de los *pacientes registrados* en el sistema
 
-**Validación:**
+#### Validación 
 
-	· Se deben mostrar los datos de todos los pacientes registrados en el sistema.
-
-	
+* Se debe mostrar los datos de todos los pacientes registrados en el sistema
+* Muestra error si la lista está vacía
