@@ -1,4 +1,4 @@
-**ID**: 04 
+**ID**: 05 
 **Nombre**: Buscar paciente por nombre completo(nombre y apellidos)
 
 **Prioridad** (de 1 a 10): 9 

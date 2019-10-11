@@ -1,4 +1,4 @@
-**ID**: 05 
+**ID**: 06 
 **Nombre**: Mostrar información de un paciente
 
 **Prioridad** (de 1 a 10): 9 

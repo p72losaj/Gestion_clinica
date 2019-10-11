@@ -36,16 +36,17 @@ Vamos a registrar los datos relativos a los pacientes, las citas, el tratamiento
 
 **Requisitos Funcionales por prioridad**
 
-	1. Añadir paciente
-	2. Añadir cita
-	3. Mostrar lista pacientes
-	4. Buscar paciente por nombre completo(nombre y apellidos)
-	5. Mostrar información del paciente
-	6. Modificar datos paciente
-	7. Modificar datos cita
-	8. Modificar datos tratamiento
-	9. Eliminar Cita
-	10. Eliminar Tratamiento
+	1. Mostrar citas
+	2. Añadir paciente
+	3. Añadir cita
+	4. Mostrar lista pacientes
+	5. Buscar paciente por nombre completo(nombre y apellidos)
+	6. Mostrar información del paciente
+	7. Modificar datos paciente
+	8. Modificar datos cita
+	9. Modificar datos tratamiento
+	10. Eliminar Cita
+	11. Eliminar Tratamiento
 
 **Requisitos No Funcionales**
 
