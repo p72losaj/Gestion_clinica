@@ -4,11 +4,11 @@
 **Prioridad** (de 1 a 10): 9 
 **Iteracion**:1
 
-**Responsable**: Doctor
+**Responsable**: Usuario
 
 ### Descripcion:
 
-Como *Doctor* quiero *buscar los datos* de un *paciente*
+Como *Usuario* quiero *buscar los datos* de un *paciente*
 
 #### Validación 
 

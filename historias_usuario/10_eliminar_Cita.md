@@ -1,14 +1,14 @@
 **ID**: 10 
-**Nombre**: Eliminar información de una cita
+**Nombre**: Eliminar la información de una cita
 
 **Prioridad** (de 1 a 10): 9 
 **Iteracion**:1
 
-**Responsable**: Doctor
+**Responsable**: Usuario
 
 ### Descripcion:
 
-Como *Doctor* quiero *eliminar la información* de una *cita registrada* en el sistema
+Como *Usuario* quiero *eliminar la información* de una *cita registrada* en el sistema
 
 #### Validación 
 

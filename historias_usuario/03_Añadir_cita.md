@@ -4,11 +4,11 @@
 **Prioridad** (de 1 a 10): 9 
 **Iteracion**:1
 
-**Responsable**: Doctor
+**Responsable**: Usuario
 
 ### Descripcion:
 
-Como *Doctor* quiero *añadir los datos de la cita* de un *nuevo paciente*
+Como *Usuario* quiero *añadir los datos de la cita* de un *nuevo paciente*
 
 #### Validación 
 

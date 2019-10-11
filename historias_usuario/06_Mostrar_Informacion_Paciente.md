@@ -4,11 +4,11 @@
 **Prioridad** (de 1 a 10): 9 
 **Iteracion**:1
 
-**Responsable**: Doctor
+**Responsable**: Usuario
 
 ### Descripcion:
 
-Como *Doctor* quiero *mostrar la información* de un *paciente registrado* en el sistema
+Como *Usuario* quiero *mostrar la información* de un *paciente registrado* en el sistema
 
 #### Validación 
 

@@ -1,14 +1,14 @@
 **ID**: 11 
-**Nombre**: Eliminar información de un tratamiento
+**Nombre**: Eliminar la información de un tratamiento
 
 **Prioridad** (de 1 a 10): 9 
 **Iteracion**:1
 
-**Responsable**: Doctor
+**Responsable**: Usuario
 
 ### Descripcion:
 
-Como *Doctor* quiero *eliminar la información* de un *tratamiento registrado* en el sistema
+Como *Usuario* quiero *eliminar la información* de un *tratamiento registrado* en el sistema
 
 #### Validación 
 
