@@ -44,7 +44,6 @@ Vamos a registrar los datos relativos a los pacientes, las citas, el tratamiento
 	6. Modificar datos paciente
 	7. Modificar datos cita
 	8. Modificar datos tratamiento
-	9. Eliminar Paciente
 	10. Eliminar Cita
 	11. Eliminar Tratamiento
 
