@@ -1,4 +1,4 @@
-**ID**: 10 
+**ID**: 9 
 **Nombre**: Eliminar información de una cita
 
 **Prioridad** (de 1 a 10): 9 

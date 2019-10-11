@@ -1,4 +1,4 @@
-**ID**: 11 
+**ID**: 10 
 **Nombre**: Eliminar información de un tratamiento
 
 **Prioridad** (de 1 a 10): 9 
