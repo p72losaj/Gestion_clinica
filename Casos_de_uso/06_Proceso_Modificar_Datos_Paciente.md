@@ -9,7 +9,7 @@
 * El paciente al que debemos modificar los datos, debe existir.
 
 **Flujo principal**:
-1. El usuario clickea sobre la función Añadir cita y se abre una ventana.
+1. El usuario clickea sobre la función Modificar datos paciente y se abre una ventana.
 1. El sistema muestra una ventana con dos botones, aceptar y cancelar, y un campo vacio para introducir el nombre o los apellidos del paciente que se desea modificar los datos.  
 1. Es usuario introduce el nombre o los apellidos del paciente. Posteriormente pulsa aceptar.
 1. El sistema muestra una nueva ventana con dos botones, aceptar y cancelar, y una lista de los pacientes que tengan ese nombre o apellido.
