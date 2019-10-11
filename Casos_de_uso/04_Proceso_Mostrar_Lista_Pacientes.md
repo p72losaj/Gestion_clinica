@@ -1,6 +1,6 @@
 ## Proceso Mostrar Lista Pacientes
 
-**ID**: 03
+**ID**: 04
 **Descripción**: Se clickea en la función Mostrar Lista de Pacientes. EL sistema muestra una lista con los pacientes.
 
 **Actores principales**: Usuario
@@ -20,4 +20,4 @@
  
 **Flujos alternativos**:
 
-2.a. Si no existe ningún paciente, el sistema muestra una ventana con el boton aceptar y el mensaje 'No hay pacientes disponibles'. El usuario pulsa aceptar y el sistema muestra de nuevo la pantalla principal.
+2.a. Si no existe ningún paciente, el sistema muestra una ventana con el boton aceptar y el mensaje "No hay pacientes disponibles". El usuario pulsa aceptar y el sistema muestra de nuevo la pantalla principal.

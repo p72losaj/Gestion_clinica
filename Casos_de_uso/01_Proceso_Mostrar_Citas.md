@@ -19,4 +19,4 @@
 
 **Flujos alternativos**:
 
-4.a. Si en el dia seleccionado no existe ninguna cita, el sistema muestra una ventana con un boton de aceptar y un mensaje de error 'No se encontraron citas en el dia seleccionado'. Después de esto, el usuario pulsa aceptar y el sistema cierra la ventana y muestra la interfaz principal del programa.   
+4.a. Si en el dia seleccionado no existe ninguna cita, el sistema muestra una ventana con un boton de aceptar y un mensaje de error "No se encontraron citas en el dia seleccionado". Después de esto, el usuario pulsa aceptar y el sistema cierra la ventana y muestra la interfaz principal del programa.   

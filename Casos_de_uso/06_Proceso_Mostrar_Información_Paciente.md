@@ -1,6 +1,6 @@
 ## Proceso Mostrar Información Paciente
 
-**ID**: 05
+**ID**: 06
 **Descripción**: Se clickea en la función buscar paciente, el usuario introduce el nombre completo del paciente y el sistema muestra en una ventana el paciente. El usuario hace click sobre el nombre del paciente y se muestra la información del paciente.
 
 **Actores principales**: Usuario
@@ -22,4 +22,4 @@
 
 **Flujos alternativos**:
 
-3.a. Si el nombre completo de paciente no se encuentra, el sistema devolvera un cuadro de error con el mensaje 'No se ha encontrado el paciente.' y un boton de aceptar. El usuario pulsa aceptar y el sistema vuelve a mostrar la interfaz principal.   
+3.a. Si el nombre completo de paciente no se encuentra, el sistema devolvera un cuadro de error con el mensaje "No se ha encontrado el paciente." y un boton de aceptar. El usuario pulsa aceptar y el sistema vuelve a mostrar la interfaz principal.   
