@@ -39,7 +39,7 @@ Vamos a registrar los datos relativos a los pacientes, las citas, el tratamiento
 	1. Añadir paciente
 	2. Añadir cita
 	3. Mostrar lista pacientes
-	4. Buscar paciente por nombre y apellidos
+	4. Buscar paciente por nombre completo(nombre y apellidos)
 	5. Mostrar información del paciente
 	6. Modificar datos paciente
 	7. Modificar datos cita

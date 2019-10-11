@@ -15,4 +15,4 @@ Como *Doctor* quiero *mostrar la información* de un *paciente registrado* en el
 * Se debe localizar cualquier paciente
 * El resultado de la búsqueda es único
 * Muestra un error si no encuentra al paciente
-* Muestra toda la información en el sistema sobre el paciente
+* Muestra toda la información en el sistema sobre el paciente, si lo encuentra
