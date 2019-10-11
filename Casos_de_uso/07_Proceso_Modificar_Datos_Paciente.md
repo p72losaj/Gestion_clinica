@@ -1,7 +1,7 @@
 ## Proceso Modificar Datos Paciente
 
 **ID**: 06
-**Descripción**: Se clickea en la función Modificar datos del paciente dentro del menu principal, e introducen los nuevos datos del paciente y se comprueba que no haya ningun error.
+**Descripción**: Se clickea en la función Modificar datos del paciente dentro del menu principal, se introducen los nuevos datos del paciente y se comprueba que no haya ningun error.
 
 **Actores principales**: Usuario
 
@@ -29,4 +29,4 @@
 
 1.a. Si aún no hay ningún paciente, el programa devolverá un mensaje de error 'No existen pacientes.' y un botón de aceptar. El usuario pulsara en aceptar y el sistema volverá a la interfaz principal.
 4.a. Si no se encuentra ningún paciente con los datos introducidos, el sistema mostrará una ventana con un boton de aceptar y el mensaje 'No se ha encontrado ningún paciente con esos datos'. El usuario pulsará en aceptar y el sistema volvera automáticamente a la interfaz principal.   
-8.a. SI los datos introducidos no son correctos, el sistema devuelve una ventana con un mensaje de error 'Los datos no son validos' y un boton de aceptar. EL usuario pulsará en aceptar y el sistema volverá al menú principal, sin modificar los datos.   
+8.a. Si los datos introducidos no son correctos, el sistema devuelve una ventana con un mensaje de error 'Los datos no son válidos' y un boton de aceptar. EL usuario pulsará en aceptar y el sistema volverá al menú principal, sin modificar los datos.   

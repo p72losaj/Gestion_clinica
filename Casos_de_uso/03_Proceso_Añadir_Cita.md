@@ -1,7 +1,7 @@
 ## Proceso Añadir Cita a Paciente
 
 **ID**: 02
-**Descripción**: Se clickea en la función, se introducen los datos de la nueva cita y se comprueba que no haya ningun error.
+**Descripción**: Se clickea en la función Añadir cita, se introducen los datos de la nueva cita y se comprueba que no haya ningun error.
 
 **Actores principales**: Usuario
 
