@@ -42,14 +42,14 @@ Vamos a registrar los datos relativos a los pacientes, las citas, el tratamiento
 	5. Añadir tratamiento a un paciente
 	6. Mostrar lista de pacientes
 	7. Mostrar tratamiento de un paciente
-	7. Buscar paciente
-	8. Mostrar información del paciente
-	9. Modificar datos personales del paciente
-	10. Modificar datos de la cita de un paciente
-	11. Modificar datos del tratamiento actual de un paciente
-	12. Cancelar la cita de un paciente
-	13. Cancelar el tratamiento de un paciente
-	14. Borrar a un paciente (necesaria confirmación)
+	8. Buscar paciente
+	9. Mostrar información del paciente
+	10. Modificar datos personales del paciente
+	11. Modificar datos de la cita de un paciente
+	12. Modificar datos del tratamiento actual de un paciente
+	13. Cancelar la cita de un paciente
+	14. Cancelar el tratamiento de un paciente
+	15. Borrar a un paciente (necesaria confirmación)
 
 **Requisitos No Funcionales**
 

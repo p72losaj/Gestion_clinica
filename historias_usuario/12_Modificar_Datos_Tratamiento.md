@@ -1,4 +1,4 @@
-**ID**: 09 
+**ID**: 12 
 **Nombre**: Modificar datos del tratamiento de un paciente
 
 **Prioridad** (de 1 a 10): 9 
@@ -8,7 +8,7 @@
 
 ### Descripcion:
 
-Como *Usuario* quiero *modificar el tratamiento de un paciente* con el objetivo de *cambiar el tratamiento, o la dosis del tratamiento, de un paciente*.
+Como *Usuario* quiero *modificar datos* con el objetivo de *modificar los datos del tratamiento actual de un paciente*.
 
 #### Validación 
 

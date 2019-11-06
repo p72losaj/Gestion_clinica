@@ -1,4 +1,4 @@
-**ID**: 06 
+**ID**: 09 
 **Nombre**: Mostrar información de un paciente
 
 **Prioridad** (de 1 a 10): 9 
@@ -14,5 +14,6 @@ Como *Usuario* quiero *mostrar la información de un paciente* con el objetivo d
 
 * Se debe localizar cualquier paciente
 * El resultado de la búsqueda es único
+* No es necesario utilizar el nombre completo
 * Muestra un error si no encuentra al paciente
 * Muestra toda la información en el sistema sobre el paciente.

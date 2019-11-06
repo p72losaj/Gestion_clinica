@@ -1,4 +1,4 @@
-**ID**: 04 
+**ID**: 06 
 **Nombre**: Mostrar Lista Pacientes
 
 **Prioridad** (de 1 a 10): 9 
