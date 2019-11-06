@@ -35,12 +35,13 @@ Vamos a registrar los datos relativos a los pacientes, las citas, el tratamiento
 
 **Requisitos Funcionales por prioridad**
 
-	1. Mostrar citas de un dia determinado
-	2. Mostrar citas de un paciente
+	1. Mostrar las citas en un dia determinado
+	1. Mostrar las citas de un paciente
 	3. Añadir datos personales de un paciente
-	4. Añadir cita de un paciente
+	4. Añadir cita a un paciente
 	5. Añadir tratamiento a un paciente
-	6. Mostrar lista pacientes
+	6. Mostrar lista de pacientes
+	7. Mostrar tratamiento de un paciente
 	7. Buscar paciente
 	8. Mostrar información del paciente
 	9. Modificar datos personales del paciente

@@ -1,5 +1,5 @@
 **ID**: 05 
-**Nombre**: Buscar paciente (no es necesario nombre completo)
+**Nombre**: Buscar paciente
 
 **Prioridad** (de 1 a 10): 9 
 **Iteracion**:1
@@ -8,7 +8,7 @@
 
 ### Descripcion:
 
-Como *Usuario* quiero *buscar los datos de un paciente* con el objetivo de *realizar cualquier operacion sobre el paciente*.
+Como *Usuario* quiero *buscar a un paciente* con el objetivo de *realizar cualquier operacion sobre el paciente*.
 
 #### Validación 
 
