@@ -8,7 +8,7 @@
  
 #### Descripcion 
  
-Como *Usuario* quiero *añadir los datos* de un *nuevo paciente*
+Como *Usuario* quiero *añadir nuevos datos* con el objetivo de *registrar los datos de un nuevo paciente*
  
 #### Validación 
  

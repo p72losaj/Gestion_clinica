@@ -8,13 +8,13 @@
 
 ### Descripcion:
 
-Como *Usuario* quiero *modificar el tratamiento* de un *paciente registrado* en el sistema
+Como *Usuario* quiero *modificar el tratamiento de un paciente* con el objetivo de *cambiar el tratamiento, o la dosis del tratamiento, de un paciente*.
 
 #### Validación 
 
 * Se debe localizar cualquier paciente
 * El resultado de la búsqueda es único
-* Es necesario utilizar el nombre completo
+* No es necesario utilizar el nombre completo
 * Muestra error si no encuentra al paciente
 * Debe permitir modificar cualquier dato del tratamiento del paciente
 * Se comprueba que los datos del tratamiento no son duplicados

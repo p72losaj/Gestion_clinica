@@ -26,7 +26,6 @@ Vamos a registrar los datos relativos a los pacientes, las citas, el tratamiento
 		- Fecha
 		- Motivo de la cita
 		- Paciente citado
-		- Doctor asignado
 
 	- Tratamiento
 		- Nombre medicacion
@@ -36,17 +35,20 @@ Vamos a registrar los datos relativos a los pacientes, las citas, el tratamiento
 
 **Requisitos Funcionales por prioridad**
 
-	1. Mostrar citas
-	2. Añadir paciente
-	3. Añadir cita
-	4. Mostrar lista pacientes
-	5. Buscar paciente por nombre completo(nombre y apellidos)
-	6. Mostrar información del paciente
-	7. Modificar datos paciente
-	8. Modificar datos cita
-	9. Modificar datos tratamiento
-	10. Eliminar Cita
-	11. Eliminar Tratamiento
+	1. Mostrar citas de un dia determinado
+	2. Mostrar citas de un paciente
+	3. Añadir datos personales de un paciente
+	4. Añadir cita de un paciente
+	5. Añadir tratamiento a un paciente
+	6. Mostrar lista pacientes
+	7. Buscar paciente
+	8. Mostrar información del paciente
+	9. Modificar datos personales del paciente
+	10. Modificar datos de la cita de un paciente
+	11. Modificar datos del tratamiento actual de un paciente
+	12. Cancelar la cita de un paciente
+	13. Cancelar el tratamiento de un paciente
+	14. Borrar a un paciente (necesaria confirmación)
 
 **Requisitos No Funcionales**
 

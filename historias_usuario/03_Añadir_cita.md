@@ -8,7 +8,7 @@
 
 ### Descripcion:
 
-Como *Usuario* quiero *añadir los datos de la cita* de un *nuevo paciente*
+Como *usuario* quiero *añadir datos de una cita* con el objetivo de *añadir los datos de una cita a un paciente*.
 
 #### Validación 
 

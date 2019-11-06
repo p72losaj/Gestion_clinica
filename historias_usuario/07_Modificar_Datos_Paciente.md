@@ -8,14 +8,14 @@
 
 ### Descripcion:
 
-Como *Usuario* quiero *modificar los datos* de un *paciente registrado* en el sistema
+Como *Usuario* quiero *modificar los datos paciente* con el objetivo de *cambiar los datos del paciente*.
 
 #### Validación 
 
 * Se debe localizar cualquier paciente
 * El resultado de la búsqueda es único
-* Es necesario utilizar el nombre completo
+* No es necesario utilizar el nombre completo
 * Muestra error si no encuentra al paciente
-* Debe permitir modificar cualquier dato del paciente
+* Se debe consultar el tipo de dato del paciente que se desee modificar
 * Se comprueba que los datos no son duplicados
 * Se verifica que se han sido modificados los datos del paciente

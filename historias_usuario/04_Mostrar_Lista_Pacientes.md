@@ -8,7 +8,7 @@
 
 ### Descripcion:
 
-Como *Usuario* quiero *mostrar una lista* de los *pacientes registrados* en el sistema
+Como *Usuario* quiero *mostrar una lista* con el objetivo de *comprobar los pacientes registrados en el sistema*.
 
 #### Validación 
 

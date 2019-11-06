@@ -1,5 +1,5 @@
 **ID**: 01 
-**Nombre**: Mostrar todas las citas en un día
+**Nombre**: Mostrar todas las citas de un dia determinado
 
 **Prioridad** (de 1 a 10): 9 
 **Iteracion**:1
@@ -8,10 +8,9 @@
 
 ### Descripcion:
 
-Como *Usuario* quiero *ver las citas* en un día determinado
+Como *Usuario* quiero *mostrar las citas de un dia determinado* con el objetivo de *revisar las citas del día elegido*
 
 #### Validación 
 
-* Se debe permitir elegir cualquier día
-* Se deben mostrar todas las citas en el día elegido
-* Debe indicar si el día elegido está vacío.
+* Se deben mostrar todas las citas del dia elegido.
+* Indica error si no hay ninguna cita en el dia elegido.

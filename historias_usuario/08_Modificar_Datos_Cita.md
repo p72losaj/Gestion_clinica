@@ -8,13 +8,13 @@
 
 ### Descripcion:
 
-Como *Usuario* quiero *modificar la cita* de un *paciente registrado* en el sistema
+Como *Usuario* quiero *modificar la cita paciente* con el objetivo de *cambiar la cita de un paciente*.
 
 #### Validación 
 
 * Se debe localizar cualquier paciente
 * El resultado de la búsqueda es único
-* Es necesario utilizar el nombre completo
+* No es necesario utilizar el nombre completo
 * Muestra error si no encuentra al paciente
 * Debe permitir modificar cualquier dato de la cita paciente
 * Se comprueba que los datos de la cita no son duplicados
