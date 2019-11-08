@@ -1,5 +1,5 @@
 **ID**: 14 
-**Nombre**: Eliminar un tratamiento
+**Nombre**: Cancelar un tratamiento
 
 **Prioridad** (de 1 a 10): 9 
 **Iteracion**:1

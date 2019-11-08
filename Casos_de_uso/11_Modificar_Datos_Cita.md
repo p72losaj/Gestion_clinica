@@ -12,7 +12,7 @@
 1. El usuario clickea sobre la función Modificar datos paciente y se abre una ventana.
 1. El sistema muestra una ventana con dos botones, aceptar y cancelar, y un campo vacio para introducir el nombre o los apellidos del paciente que se desea modificar los datos.  
 1. Es usuario introduce el nombre o los apellidos del paciente. Posteriormente pulsa aceptar.
-1. El sistema muestra una nueva ventana con dos botones, aceptar y cancelar, y una lista de los pacientes que tengan ese nombre o apellido.
+1. El sistema muestra una nueva ventana la lista de los pacientes que tengan ese nombre o apellido.
 1. El usuario selecciona el paciente deseado y pulsa en aceptar.
 1. El sistema muestra una nueva ventana con los campos rellenados con los datos del paciente y dos botones, aceptar y cancelar.
 1. EL usuario modifica la cita y pulsa en aceptar.
@@ -30,4 +30,4 @@
 
 4.a. Si no se encuentra ningún paciente con los datos introducidos, el sistema mostrará una ventana con un boton de aceptar y el mensaje "No se ha encontrado ningún paciente con esos datos". El usuario pulsará en aceptar y el sistema volvera automáticamente a la interfaz principal. 
   
-8.a. Si la cita introducida no es correcta, o suplanta la cita de otro paciente, el sistema devuelve una ventana con un mensaje de error "La cita no es válida o ya existe una cita en esa fecha y hora." y un boton de aceptar. EL usuario pulsará en aceptar y el sistema volverá al menú principal, sin modificar los datos.   
+8.a. Si la cita introducida no es correcta, o suplanta la cita de otro paciente, el sistema devuelve una ventana con un mensaje de error "Los datos no son correctos o estan duplicados." y un boton de aceptar. EL usuario pulsará en aceptar y el sistema volverá al menú principal, sin modificar los datos.   
