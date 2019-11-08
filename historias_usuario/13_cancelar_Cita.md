@@ -1,5 +1,5 @@
 **ID**: 13 
-**Nombre**: Eliminar una cita
+**Nombre**: Cancelar cita
 
 **Prioridad** (de 1 a 10): 9 
 **Iteracion**:1
@@ -8,7 +8,7 @@
 
 ### Descripcion:
 
-Como *Usuario* quiero *eliminar una cita* con el objetivo de *eliminar la cita de un paciente*
+Como *Usuario* quiero *cancelar cita* con el objetivo de *cancelar la cita de un paciente*
 
 #### Validación 
 

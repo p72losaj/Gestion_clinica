@@ -8,7 +8,7 @@
 
 ### Descripcion:
 
-Como *Usuario* quiero *eliminar datos* con el objetivo de *eliminar el tratamineto de un paciente*
+Como *Usuario* quiero *cancelar tratamiento* con el objetivo de *cancelar el tratamineto de un paciente*
 
 #### Validación 
 
