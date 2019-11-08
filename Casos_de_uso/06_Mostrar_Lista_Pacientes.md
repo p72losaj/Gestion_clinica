@@ -1,6 +1,6 @@
-## Proceso Mostrar Lista Pacientes
+## Mostrar Lista Pacientes
 
-**ID**: 04
+**ID**: 06
 **Descripción**: Se clickea en la función Mostrar Lista de Pacientes. EL sistema muestra una lista con los pacientes.
 
 **Actores principales**: Usuario
