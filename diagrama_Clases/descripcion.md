@@ -11,7 +11,7 @@
 	Variable: fP	Tipo: fecha				Descripcion: Fecha nacimiento del paciente
 	Variable: hP	Tipo: string			Descripcion: Tipo hospital procede el paciente
 	Variable: tP 	Tipo: string			Descripcion: Telefono del paciente
-	Variable: hP 	Tipo: texto				Descripcion: Historial medico del paciente
+	Variable: sP 	Tipo: texto				Descripcion: Historial medico del paciente
 
 **Métodos**:
 
