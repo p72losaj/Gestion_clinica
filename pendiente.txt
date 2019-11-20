@@ -1,0 +1,33 @@
+PRACTICA 1
+
+	
+	CASOS DE USO
+
+    Falta completar y corregir los casos de uso relativos a los requisitos que se mencionaron antes.
+
+    Diagrama de casos de uso: todos los casos de uso deben tener uno o más actores principales asociados. Hay un par de ellos sin actor asociado. Si en el caso de uso habéis puesto como actor principal al “Usuario”, esto debe quedar reflejado en el diagrama, igual que con todos los demás casos. Falta completar los casos de uso relativos a los requisitos que se mencionaron antes, una vez se elaboren.
+
+PRACTICA 2
+
+ 	
+
+	DIAGRAMAS DE SECUENCIA
+
+    El archivo markdown de diagramas de secuencia no es lo que se pedía. Se pedía un markdown que contuviera las imágenes de todos los diagramas.
+
+    Mensaje de error no debería ser un elemento del diagrama de secuencia. Es simplemente un mensaje.
+
+    En general se podrían haber simplificado más los diagramas de secuencia. No se pedía detallarlos tanto. Bastaría con poner Actor, Sistema y BBDD puesto que el sistema a desarrollar es bastante sencillo.
+
+    Los bloques alt se deben crear utilizando el bloque existente en visual paradigm para ello (ej. diagrama de modificar tratamiento).
+
+    Todos los bloques alt, opt y loop deben tener su condición.
+
+
+	DIAGRAMA DE CLASES
+
+    Los nombres de los atributos deberían ser más descriptivos.
+
+    Las relaciones no se indican así. Mirad las diapositivas de la práctica.
+
+    El historial se ha definido como un atributo de tipo texto del paciente. Esto se puede hacer así pero tendréis que tener cuidado cuando hagáis la implementación porque si se permite editar como texto, es probable que no se cumplan algunos de los requisitos que se indicaron al inicio. Por ejemplo, el requisito que indicaba que no se pueden borrar entradas del historial.
