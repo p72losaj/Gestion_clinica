@@ -1,4 +1,4 @@
-## Proceso Mostrar Citas
+## Mostrar Citas
 
 **ID**: 01
 **Descripción**: Se clickea en el calendario el dia elegido, se muestran en una ventana las citas previstas para ese dia.
