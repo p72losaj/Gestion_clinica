@@ -1,4 +1,4 @@
-## Eliminar Cita Paciente
+## Cancelar Cita Paciente
 
 **ID**: 13
 **Descripción**: Se clickea en la función Modificar datos del paciente dentro del menu principal, se eliminan los datos de la cita del paciente y se comprueba que no haya ningun error.
