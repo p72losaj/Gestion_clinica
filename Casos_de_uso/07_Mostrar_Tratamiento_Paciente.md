@@ -1,4 +1,4 @@
-## Mostrar Tratamiento a Paciente
+## Mostrar Tratamiento de Paciente
 
 **ID**: 07
 **Descripción**: Se clickea en la función Mostrar Datos Paciente, se observan los datos del nuevo tratamiento y se vuelve al menu principal.
