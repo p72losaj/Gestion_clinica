@@ -1,4 +1,4 @@
-## Mostrar Cita de Paciente
+## Cita de Paciente
 
 **ID**: 02
 **Descripción**: Se clickea en la función Mostrar Datos Paciente, se muestran las citas del paciente.
