@@ -11,3 +11,5 @@
 		8. Mostrar Lista Pacientes
 		9. Mostrar Citas Paciente
 */
+
+#include "funciones.h"
