@@ -1,4 +1,4 @@
-## Proceso Añadir Nuevo Paciente
+## Añadir Nuevo Paciente
 
 **ID**: 03
 **Descripción**: Se clickea en la función, se introducen los datos del nuevo paciente y se comprueba que no haya ningún error.
