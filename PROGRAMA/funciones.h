@@ -1,0 +1,3 @@
+/*
+	Declaracion de las funciones
+*/
