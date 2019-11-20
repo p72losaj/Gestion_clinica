@@ -1,4 +1,4 @@
-## Eliminar Datos Tratamiento Paciente
+## Cancelar Tratamiento Paciente
 
 **ID**: 14
 **Descripción**: Se clickea en la función Modificar datos del paciente dentro del menu principal, se borra el tratamiento o se coloca "No asignado" y se comprueba que no haya ningun error.
