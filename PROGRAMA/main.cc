@@ -1,6 +1,4 @@
 
-#include <fstream>
-#include <list>
 
 #include "funciones.h"
 
@@ -9,6 +7,7 @@ using namespace std;
 int main(){
 
   list <Paciente> pacientes_;
+  list <Paciente>:: iterator i;
   
   int opcion;
   string cad;
@@ -38,13 +37,22 @@ int main(){
         cout<<" Direccion sin espacios: "<<endl;
         cin>>cad;
         p.setDireccion(cad);
-        //cout<<" Nacimiento: "<<endl;
-        //cin>>cad;
-        //p.setNacimiento(cad);
+        cout<<" Nacimiento: "<<endl;
+        cin>>cad;
+        p.setNacimiento(cad);
+        cout<<" Telefono: "<<endl;
+        cin>>cad;
+        p.setTelefono(cad);
+        cout<<" Historial sin espacios: "<<endl;
+        cin>>cad;
+        p.setHistorial(cad);
+
         cout<<" Nombre del paciente: "<<p.getNombre()<<endl;
         cout<<" Apellidos del paciente: "<<p.getApellidos()<<endl;
         cout<<" Direccion del paciente: "<<p.getDireccion()<<endl;
         cout<<" Nacimiento del paciente: "<<p.getNacimiento()<<endl;
+        cout<<" Telefono del paciente: "<<p.getTelefono()<<endl;
+        cout<<" Historial del paciente: "<<p.getHistorial()<<endl;
       break;
     }
 

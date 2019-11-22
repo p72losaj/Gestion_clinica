@@ -55,32 +55,32 @@ class Paciente{
 		// Obtener nombre del paciente
 		inline string getNombre(){return nombre_;}
 		// Modificar nombre del paciente
-		inline string setNombre(string cad) { nombre_ = cad; }
+		inline void setNombre(string cad) { nombre_ = cad; }
 		// Obtener apellidos del paciente
-		inline string getApellidos() const { return apellido1_+ ", "+ apellido2_; }
+		inline string getApellidos(){return apellido1_+", "+apellido2_;}
 		// Modificar apellidos del paciente
-		inline string setApellido1(string cad) { apellido1_ = cad; }
-		inline string setApellido2(string cad) { apellido2_ = cad; }
+		inline void setApellido1(string cad) { apellido1_ = cad; }
+		inline void setApellido2(string cad) { apellido2_ = cad; }
 		// Obtener direccion del paciente
 		inline string getDireccion() const { return direccion_; }
 		// Modificar direccion del paciente
-		inline string setDireccion( string cad) { direccion_ = cad; }
+		inline void setDireccion(string cad) { direccion_ = cad; }
 		// Obtener fecha_nacimiento del paciente
 		inline string getNacimiento() const { return nacimiento_; }
 		// Modificar fecha_nacimiento del paciente
-		inline string setNacimiento(string cad) { nacimiento_ = cad; }
+		inline void setNacimiento(string cad) { nacimiento_ = cad; }
 		// Obtener tipo hospital de procedencia del paciente
 		inline string getHospital() const { return hospital_; }
 		// Modificar tipo hospital de procedencia del paciente
-		inline string setHospital(string cad) { hospital_ = cad;}
+		inline void setHospital(string cad) { hospital_ = cad;}
 		// Obtener telefono del paciente
 		inline string getTelefono() const { return telefono_; }
 		// Modificar telefono del paciente
-		inline string setTelefono(string cad) { telefono_ = cad;}
+		inline void setTelefono(string cad) { telefono_ = cad;}
 		// Obtener el historial del paciente
 		inline string getHistorial() const { return historial_; }
 		// Modificar el historial del paciente
-		inline string setHistorial(string cad){ historial_ = cad; }	
+		inline void setHistorial(string cad){ historial_ = cad; }	
 
 		int BuscarPaciente(string cad);
 		void MostrarHistorial(string cad);
