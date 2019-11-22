@@ -11,6 +11,8 @@
 #include <list>
 #include <iostream>
 
+using namespace std;
+
 	/*
 		Funciones clase paciente
 	*/
@@ -87,7 +89,7 @@ class Paciente{
 		Añadir Paciente
 		Parametro: Nombre paciente
 		*/
-		void AñadirPaciente(string cad);
+		void AddPaciente(string cad);
 		/*
 		Modificar Datos Paciente
 		Parametro: Nombre Paciente
@@ -97,7 +99,7 @@ class Paciente{
 		Añadir tratamiento al paciente
 		cad1: Nombre del paciente
 		*/
-		void AñadirTratamiento(string cad);
+		void AddTratamiento(string cad);
 		/*
 		Mostrar tratamiento del paciente
 		Parametro: Nombre del paciente
@@ -118,13 +120,13 @@ class Paciente{
 		*/
 		void MostrarCitasPaciente(string cad);
 
-}
+};
 	
 	/*
 		Funciones clase Cita
 		Clase cita hereda la clase paciente
 	*/
-
+/*
 	// Obtener la hora de la cita
 	inline string getHora() const { return hora_; }
 	// Modificar la hora de la cita
@@ -137,12 +139,13 @@ class Paciente{
 	inline string getMotivo() const { return motivo_; }
 	// Modificar motivo de la cita
 	inline string setMotivo(string cad) { motivo_ = cad;}
-
+*/
 	/*
 		Funciones clase tratamiento
 
 		Clase tratamiento hereda la clase Persona
 	*/
+/*
 	 // Obtener el nombre del tratamiento
 	inline string getTratamiento() const { return tratamiento_; }
 	// Modificar nombre tratamiento
@@ -155,4 +158,5 @@ class Paciente{
 	inline string getDosis() const { return dosis_; }
 	// Modificar dosis tratamineto
 	inline string setDosis( string cad){ dosis_ cad; }
+	*/
 #endif
