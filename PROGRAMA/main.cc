@@ -1,43 +1,54 @@
-/*
-	Programa principal
 
-		1. Buscar Paciente
-		2. Mostrar Informacion Paciente
-		3. Añadir Paciente
-		4. Modificar Datos Paciente
-		5. Añadir Tratamiento al paciente
-		6. Mostrar tratamiento Paciente
-		7. Eliminar Paciente
-		8. Mostrar Lista Pacientes
-		9. Mostrar Citas Paciente
-*/
+#include <fstream>
+#include <list>
 
 #include "funciones.h"
 
-int main(void){
+using namespace std;
 
-	string cad;
-	int opcion;
+int main(){
 
-	do{
+  list <Paciente> pacientes_;
+  
+  int opcion;
+  string cad;
 
-		cout<<"\tMENU"<<endl;
-		cout<<" 0. Exit"<<endl;
-		cout<<" 1. Buscar Paciente"<<endl;
+  do{
 
-		cout<<" Introduce una opcion: "<<endl;
-		cin>>opcion;
+    cout<<"MENU\n"<<endl;
+    cout<<"0. Salir del programa\n"<<endl;
+    cout<<"1. Añadir un paciente\n"<<endl;
 
-		switch(opcion){
+    cout<<"Introduce una opcion: "<<endl;
+    cin>>opcion;
+    
+    switch(opcion){
 
-			case 1:
+      case 1:
+      
+        cout<<" Nombre: "<<endl;
+        cin>>cad;
+        Paciente p(cad);
+        cout<<" Apellido: "<<endl;
+        cin>>cad;
+        p.setApellido1(cad);
+        cout<<" Apellido: "<<endl;
+        cin>>cad;
+        p.setApellido2(cad);
+        cout<<" Direccion sin espacios: "<<endl;
+        cin>>cad;
+        p.setDireccion(cad);
+        cout<<" Nombre del paciente: "<<p.getNombre()<<endl;
+        cout<<" Apellidos del paciente: "<<p.getApellidos()<<endl;
+        cout<<" Direccion del paciente: "<<p.getDireccion()<<endl;
+      break;
+    }
 
-				cout<<" Nombre paciente a buscar: "<<endl;
-				cin>> cad;
-				
+  } while(opcion!=0);
+  
+  return 0;
 
-			break;
-		}
-	} while(opcion != 0);
-	return 0;
 }
+
+
+

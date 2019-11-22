@@ -26,22 +26,25 @@ class Paciente{
 	private:
 
 		string nombre_;
-		string apellidos_;
+		string apellido1_;
+		string apellido2_;
 		string direccion_;
 		string nacimiento_;
 		string hospital_;
 		string telefono_;
-		string historial_;
+		string historial_; 
 
 	public:
 
 		//Constructor de la clase
 
-		Paciente(string nombre, string apellidos="", string direccion= "", string nacimiento= "",
+
+		Paciente(string nombre, string apellido1="", string apellido2="", string direccion= "", string nacimiento= "",
 					string hospital="", string telefono="", string historial="")
 		{
 			nombre_ = nombre;
-			apellidos_ = apellidos;
+			apellido1_ = apellido1;
+			apellido2_ = apellido2;
 			direccion_ = direccion;
 			nacimiento_ = nacimiento;
 			hospital_ = hospital;
@@ -54,9 +57,10 @@ class Paciente{
 		// Modificar nombre del paciente
 		inline string setNombre(string cad) { nombre_ = cad; }
 		// Obtener apellidos del paciente
-		inline string getApellidos() const { return apellidos_; }
+		inline string getApellidos() const { return apellido1_+ ", "+ apellido2_; }
 		// Modificar apellidos del paciente
-		inline string setApellidos(string cad) { apellidos_ = cad; }
+		inline string setApellido1(string cad) { apellido1_ = cad; }
+		inline string setApellido2(string cad) { apellido2_ = cad; }
 		// Obtener direccion del paciente
 		inline string getDireccion() const { return direccion_; }
 		// Modificar direccion del paciente
@@ -77,31 +81,13 @@ class Paciente{
 		inline string getHistorial() const { return historial_; }
 		// Modificar el historial del paciente
 		inline string setHistorial(string cad){ historial_ = cad; }	
+
 		int BuscarPaciente(string cad);
 		void MostrarHistorial(string cad);
 		void MostrarPaciente(string cad);
-		void AñadirPaciente(string cad);
+		void AddPaciente(Paciente paciente);
 		void ModificarPaciente(string cad);
-		void AñadirTratamiento(string cad);
-		/*
-		Añadir Paciente
-		Parametro: Nombre paciente
-		*/
-		void AddPaciente(string cad);
-		/*
-		Modificar Datos Paciente
-		Parametro: Nombre Paciente
-		*/
-		void ModificarPaciente(string cad);
-		/*
-		Añadir tratamiento al paciente
-		cad1: Nombre del paciente
-		*/
 		void AddTratamiento(string cad);
-		/*
-		Mostrar tratamiento del paciente
-		Parametro: Nombre del paciente
-		*/
 		void MostrarTratamiento(string cad);
 		void EliminarPaciente(string cad);
 		void MostrarPacientes();
