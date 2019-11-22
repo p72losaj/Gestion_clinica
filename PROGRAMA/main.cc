@@ -13,3 +13,31 @@
 */
 
 #include "funciones.h"
+
+int main(void){
+
+	string cad;
+	int opcion;
+
+	do{
+
+		cout<<"\tMENU"<<endl;
+		cout<<" 0. Exit"<<endl;
+		cout<<" 1. Buscar Paciente"<<endl;
+
+		cout<<" Introduce una opcion: "<<endl;
+		cin>>opcion;
+
+		switch(opcion){
+
+			case 1:
+
+				cout<<" Nombre paciente a buscar: "<<endl;
+				cin>> cad;
+				
+
+			break;
+		}
+	} while(opcion != 0);
+	return 0;
+}
