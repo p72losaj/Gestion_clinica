@@ -14,15 +14,12 @@
 
 using namespace std;
 
-<<<<<<< HEAD
 /*
 	Funciones clase paciente
 */
-=======
 	/*
 		Funciones clase paciente
 	*/
->>>>>>> baf0333bbe02fdb9259903b9cf1742043126da23
 
 class Paciente{
 
@@ -83,11 +80,9 @@ class Paciente{
 		int BuscarPaciente(string cad);
 		void MostrarHistorial(string cad);
 		void MostrarPaciente(string cad);
-<<<<<<< HEAD
 		void AñadirPaciente(string cad);
 		void ModificarPaciente(string cad);
 		void AñadirTratamiento(string cad);
-=======
 		/*
 		Añadir Paciente
 		Parametro: Nombre paciente
@@ -107,16 +102,12 @@ class Paciente{
 		Mostrar tratamiento del paciente
 		Parametro: Nombre del paciente
 		*/
->>>>>>> baf0333bbe02fdb9259903b9cf1742043126da23
 		void MostrarTratamiento(string cad);
 		void EliminarPaciente(string cad);
 		void MostrarPacientes();
 		void MostrarCitasPaciente(string cad);
 
 };
-<<<<<<< HEAD
-
-=======
 	
 	/*
 		Funciones clase Cita
@@ -155,5 +146,4 @@ class Paciente{
 	// Modificar dosis tratamineto
 	inline string setDosis( string cad){ dosis_ cad; }
 	*/
->>>>>>> baf0333bbe02fdb9259903b9cf1742043126da23
 #endif
