@@ -38,9 +38,13 @@ int main(){
         cout<<" Direccion sin espacios: "<<endl;
         cin>>cad;
         p.setDireccion(cad);
+        //cout<<" Nacimiento: "<<endl;
+        //cin>>cad;
+        //p.setNacimiento(cad);
         cout<<" Nombre del paciente: "<<p.getNombre()<<endl;
         cout<<" Apellidos del paciente: "<<p.getApellidos()<<endl;
         cout<<" Direccion del paciente: "<<p.getDireccion()<<endl;
+        cout<<" Nacimiento del paciente: "<<p.getNacimiento()<<endl;
       break;
     }
 
