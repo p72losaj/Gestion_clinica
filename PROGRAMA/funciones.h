@@ -26,6 +26,7 @@ class Paciente{
 	private:
 
 		string nombre_;
+		string apellidos_;
 		string apellido1_;
 		string apellido2_;
 		string direccion_;
@@ -33,24 +34,26 @@ class Paciente{
 		string hospital_;
 		string telefono_;
 		string historial_; 
+		list <Paciente> pacientes_;
 
 	public:
 
 		//Constructor de la clase
 
 
-		Paciente(string nombre, string apellido1="", string apellido2="", string direccion= "", string nacimiento= "",
+		Paciente(string nombre, string apellidos="", string direccion= "", string nacimiento= "",
 					string hospital="", string telefono="", string historial="")
 		{
 			nombre_ = nombre;
-			apellido1_ = apellido1;
-			apellido2_ = apellido2;
+			apellidos_ = apellidos;
 			direccion_ = direccion;
 			nacimiento_ = nacimiento;
 			hospital_ = hospital;
 			telefono_ = telefono;
 			historial_ = historial;
 		}
+
+		inline list <Paciente> getPacientes(){ return pacientes_;}
 
 		// Obtener nombre del paciente
 		inline string getNombre(){return nombre_;}

@@ -4,10 +4,11 @@
 
 using namespace std;
 
+void AddPaciente(Paciente paciente);
+
 int main(){
 
   list <Paciente> pacientes_;
-  list <Paciente>:: iterator i;
   
   int opcion;
   string cad;
@@ -46,13 +47,10 @@ int main(){
         cout<<" Historial sin espacios: "<<endl;
         cin>>cad;
         p.setHistorial(cad);
-
-        cout<<" Nombre del paciente: "<<p.getNombre()<<endl;
-        cout<<" Apellidos del paciente: "<<p.getApellidos()<<endl;
-        cout<<" Direccion del paciente: "<<p.getDireccion()<<endl;
-        cout<<" Nacimiento del paciente: "<<p.getNacimiento()<<endl;
-        cout<<" Telefono del paciente: "<<p.getTelefono()<<endl;
-        cout<<" Historial del paciente: "<<p.getHistorial()<<endl;
+        cout<<" Hospital procedencia: "<<endl;
+        cin>>cad;
+        p.setHospital(cad);
+        AddPaciente(p);
       break;
     }
 
@@ -61,6 +59,27 @@ int main(){
   return 0;
 
 }
+
+void AddPaciente(Paciente paciente)
+{
+
+  list <Paciente> pacientes_;
+  list <Paciente>:: iterator i;
+  for(i=pacientes_.begin(); i!=pacientes_.end();i++){
+    if(i->getNombre() == paciente.getNombre() ){
+      cout<<" Paciente "<<i->getNombre()<<" encontrado\n"<<endl;
+    }
+  }
+  pacientes_.push_back(paciente);
+  string nomfich=(paciente.getNombre() + ".txt");
+  ifstream fich(nomfich.c_str());
+    if(!fich){
+      ofstream fich(nomfich.c_str());
+    }
+  cout<<" Fichero "<<nomfich<<" añadido\n";
+  fich.close();
+  cout<<" Numero de pacientes: "<<paciente.getPacientes().size()<<endl;
+} 
 
 
 
