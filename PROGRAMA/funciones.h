@@ -5,97 +5,73 @@
 #ifndef PERSONA_H
 #define PERSONA_H
 
+/*
 #include <cstdio>
 #include <cstdlib>
 #include <string>
 #include <list>
 #include <iostream>
 #include <fstream>
-
+*/
+#include <iostream>
+#include <cstring>
+#define MAX 100
 using namespace std;
 
 /*
 	Funciones clase paciente
 */
-	/*
-		Funciones clase paciente
-	*/
 
 class Paciente{
 
 	private:
 
-		string nombre_;
-		string apellidos_;
-		string apellido1_;
-		string apellido2_;
-		string direccion_;
-		string nacimiento_;
-		string hospital_;
-		string telefono_;
-		string historial_; 
-		list <Paciente> pacientes_;
+		char nombre[MAX];
+		char apellidos[MAX];
+		char direccion[MAX];
+		char nacimiento[MAX];
+		char hospital[MAX];
+		char telefono[MAX];
+		char historial[MAX]; 
+		
 
 	public:
 
-		//Constructor de la clase
+		/*
+		Constructor de la clase
+		nombre, apellidos, direccion, nacimiento, hospital, telefono, historial
+		*/
+		Paciente(char *, char *, char *, char *, char *, char *, char *);
+		// Leemos el nombre del paciente
+		const char* LeeNombre(){return nombre;}
+		// Leemos los apellidos del paciente
+		const char* LeeApellidos(){return apellidos;}
+		// Leemos la direccion del paciente
+		const char* LeeDireccion(){return direccion;}
+		// Leemos la fecha de nacimiento del paciente
+		const char* LeeNacimiento(){return nacimiento;}
+		// Leemos el tipo de hospital de procedencia del paciente
+		const char* LeeHospital(){return hospital;}
+		// Leemos el numero de telefono del paciente
+		const char* LeeTelefono(){return telefono;}
+		// Leemos el historial del paciente
+		const char* LeeHistorial(){return historial;}
+		
+		//inline list <Paciente> getPacientes(){ return pacientes_;}
 
-
-		Paciente(string nombre, string apellidos="", string direccion= "", string nacimiento= "",
-					string hospital="", string telefono="", string historial="")
-		{
-			nombre_ = nombre;
-			apellidos_ = apellidos;
-			direccion_ = direccion;
-			nacimiento_ = nacimiento;
-			hospital_ = hospital;
-			telefono_ = telefono;
-			historial_ = historial;
-		}
-
-		inline list <Paciente> getPacientes(){ return pacientes_;}
-
-		// Obtener nombre del paciente
-		inline string getNombre(){return nombre_;}
-		// Modificar nombre del paciente
-		inline void setNombre(string cad) { nombre_ = cad; }
-		// Obtener apellidos del paciente
-		inline string getApellidos(){return apellido1_+", "+apellido2_;}
-		// Modificar apellidos del paciente
-		inline void setApellido1(string cad) { apellido1_ = cad; }
-		inline void setApellido2(string cad) { apellido2_ = cad; }
-		// Obtener direccion del paciente
-		inline string getDireccion() const { return direccion_; }
-		// Modificar direccion del paciente
-		inline void setDireccion(string cad) { direccion_ = cad; }
-		// Obtener fecha_nacimiento del paciente
-		inline string getNacimiento() const { return nacimiento_; }
-		// Modificar fecha_nacimiento del paciente
-		inline void setNacimiento(string cad) { nacimiento_ = cad; }
-		// Obtener tipo hospital de procedencia del paciente
-		inline string getHospital() const { return hospital_; }
-		// Modificar tipo hospital de procedencia del paciente
-		inline void setHospital(string cad) { hospital_ = cad;}
-		// Obtener telefono del paciente
-		inline string getTelefono() const { return telefono_; }
-		// Modificar telefono del paciente
-		inline void setTelefono(string cad) { telefono_ = cad;}
-		// Obtener el historial del paciente
-		inline string getHistorial() const { return historial_; }
-		// Modificar el historial del paciente
-		inline void setHistorial(string cad){ historial_ = cad; }	
-
+		/*
+		void AddPaciente(Paciente p);
+		void LeerPaciente(Paciente p);	
 		int BuscarPaciente(string cad);
 		void MostrarHistorial(string cad);
 		void MostrarPaciente(string cad);
-		void AddPaciente(Paciente paciente);
 		void ModificarPaciente(string cad);
 		void AddTratamiento(string cad);
 		void MostrarTratamiento(string cad);
 		void EliminarPaciente(string cad);
 		void MostrarPacientes();
 		void MostrarCitasPaciente(string cad);
-
+	*/
 };
 	
 	/*

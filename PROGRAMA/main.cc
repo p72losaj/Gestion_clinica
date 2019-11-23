@@ -1,23 +1,58 @@
-
-
+#include <iostream>
+#include <cstring>
+#include <fstream>
 #include "funciones.h"
-
 using namespace std;
 
-void AddPaciente(Paciente paciente);
+Paciente::Paciente(char *n, char* a, char *d, char* fn, char* ht, char* t, char* hm) {
+   strcpy(nombre, n);
+   strcpy(apellidos, a);
+   strcpy(direccion, d);
+   strcpy(nacimiento, fn);
+   strcpy(hospital, ht);
+   strcpy(telefono, t);
+   strcpy(historial, hm);
+}
 
-int main(){
+ostream& operator<<(ostream &os, Paciente& reg) {
+    os << "Nombre: " << reg.LeeNombre() << endl;
+    os << "Apellidos: "<<reg.LeeApellidos()<<endl;
+    os << "Direccion: "<<reg.LeeDireccion()<<endl;
+    os << "Fecha_Nacimiento: "<<reg.LeeNacimiento()<<endl;
+    os << "Hospital de procedencia: "<<reg.LeeHospital()<<endl;
+    os << "Numero de telefono: "<<reg.LeeTelefono()<<endl;
+    os << "Historial del paciente: "<<reg.LeeHistorial()<<endl;
 
-  list <Paciente> pacientes_;
-  
-  int opcion;
+    fstream file("pacientes.txt");
+    if(!file.is_open() ){
+      file.open("pacientes.txt", ios::out);
+    }
+    // guardamos los datos del paciente en el fichero
+      file << "Nombre: " << reg.LeeNombre() << endl;
+      file << "Apellidos: "<<reg.LeeApellidos()<<endl;
+      file << "Direccion: "<<reg.LeeDireccion()<<endl;
+      file << "Fecha_Nacimiento: "<<reg.LeeNacimiento()<<endl;
+      file << "Hospital de procedencia: "<<reg.LeeHospital()<<endl;
+      file << "Numero de telefono: "<<reg.LeeTelefono()<<endl;
+      file << "Historial del paciente: "<<reg.LeeHistorial()<<endl;
+      // Cerramos el fichero
+      file.close(); 
+   return os;
+}
+
+int main(void){
+
+  Paciente p1( (char*)"Jaime",(char*)"Lorenzo Sanchez",(char*)"c/Alcala Zamora 18-2-3",
+                (char*)"07/12/99",(char*)"Publico", (char*)"697264930", (char*) "Gripe" );
+
+  int opcion, encontrado;
   string cad;
 
   do{
 
     cout<<"MENU\n"<<endl;
     cout<<"0. Salir del programa\n"<<endl;
-    cout<<"1. Añadir un paciente\n"<<endl;
+    cout<<"1. Nuevo paciente\n"<<endl;
 
     cout<<"Introduce una opcion: "<<endl;
     cin>>opcion;
@@ -26,31 +61,8 @@ int main(){
 
       case 1:
       
-        cout<<" Nombre: "<<endl;
-        cin>>cad;
-        Paciente p(cad);
-        cout<<" Apellido: "<<endl;
-        cin>>cad;
-        p.setApellido1(cad);
-        cout<<" Apellido: "<<endl;
-        cin>>cad;
-        p.setApellido2(cad);
-        cout<<" Direccion sin espacios: "<<endl;
-        cin>>cad;
-        p.setDireccion(cad);
-        cout<<" Nacimiento: "<<endl;
-        cin>>cad;
-        p.setNacimiento(cad);
-        cout<<" Telefono: "<<endl;
-        cin>>cad;
-        p.setTelefono(cad);
-        cout<<" Historial sin espacios: "<<endl;
-        cin>>cad;
-        p.setHistorial(cad);
-        cout<<" Hospital procedencia: "<<endl;
-        cin>>cad;
-        p.setHospital(cad);
-        AddPaciente(p);
+      cout<<p1<<endl;
+
       break;
     }
 
@@ -59,27 +71,3 @@ int main(){
   return 0;
 
 }
-
-void AddPaciente(Paciente paciente)
-{
-
-  list <Paciente> pacientes_;
-  list <Paciente>:: iterator i;
-  for(i=pacientes_.begin(); i!=pacientes_.end();i++){
-    if(i->getNombre() == paciente.getNombre() ){
-      cout<<" Paciente "<<i->getNombre()<<" encontrado\n"<<endl;
-    }
-  }
-  pacientes_.push_back(paciente);
-  string nomfich=(paciente.getNombre() + ".txt");
-  ifstream fich(nomfich.c_str());
-    if(!fich){
-      ofstream fich(nomfich.c_str());
-    }
-  cout<<" Fichero "<<nomfich<<" añadido\n";
-  fich.close();
-  cout<<" Numero de pacientes: "<<paciente.getPacientes().size()<<endl;
-} 
-
-
-
