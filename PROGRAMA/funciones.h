@@ -1,5 +1,5 @@
 /*
-	Declaracion de las funciones
+	Declaracion de las clases
 */
 
 #ifndef PERSONA_H
@@ -42,27 +42,20 @@ class Paciente{
 		nombre, apellidos, direccion, nacimiento, hospital, telefono, historial
 		*/
 		Paciente(char *, char *, char *, char *, char *, char *, char *);
-		// Leemos el nombre del paciente
-		const char* LeeNombre(){return nombre;}
-		// Leemos los apellidos del paciente
-		const char* LeeApellidos(){return apellidos;}
-		// Leemos la direccion del paciente
-		const char* LeeDireccion(){return direccion;}
-		// Leemos la fecha de nacimiento del paciente
-		const char* LeeNacimiento(){return nacimiento;}
-		// Leemos el tipo de hospital de procedencia del paciente
-		const char* LeeHospital(){return hospital;}
-		// Leemos el numero de telefono del paciente
-		const char* LeeTelefono(){return telefono;}
-		// Leemos el historial del paciente
-		const char* LeeHistorial(){return historial;}
+		void addPaciente(Paciente& reg);
+		int BuscarPaciente(char* nombre1, char* nombre2);
+		char* LeeNombre(){return nombre;}
+		char* LeeApellidos(){return apellidos;}
+		char* LeeDireccion(){return direccion;}
+		char* LeeNacimiento(){return nacimiento;}
+		char* LeeHospital(){return hospital;}
+		char* LeeTelefono(){return telefono;}
+		char* LeeHistorial(){return historial;}
 		
 		//inline list <Paciente> getPacientes(){ return pacientes_;}
 
-		/*
-		void AddPaciente(Paciente p);
-		void LeerPaciente(Paciente p);	
-		int BuscarPaciente(string cad);
+		/*	
+		
 		void MostrarHistorial(string cad);
 		void MostrarPaciente(string cad);
 		void ModificarPaciente(string cad);

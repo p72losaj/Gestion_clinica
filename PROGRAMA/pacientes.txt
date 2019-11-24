@@ -5,3 +5,10 @@ Fecha_Nacimiento: 07/12/99
 Hospital de procedencia: Publico
 Numero de telefono: 697264930
 Historial del paciente: Gripe
+Nombre: Lucas
+Apellidos:  
+Direccion:  
+Fecha_Nacimiento:  
+Hospital de procedencia:  
+Numero de telefono:  
+Historial del paciente:  
