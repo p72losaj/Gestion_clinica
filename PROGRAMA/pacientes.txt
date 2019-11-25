@@ -1,14 +1,1 @@
-Nombre: Jaime
-Apellidos: Lorenzo Sanchez
-Direccion: c/Alcala Zamora 18-2-3
-Fecha_Nacimiento: 07/12/99
-Hospital de procedencia: Publico
-Numero de telefono: 697264930
-Historial del paciente: Gripe
-Nombre: Lucas
-Apellidos:  
-Direccion:  
-Fecha_Nacimiento:  
-Hospital de procedencia:  
-Numero de telefono:  
-Historial del paciente:  
+Jaime,LorenzoSanchez,c/AlcalaZamora18/2/3,07/12/99,Publico,697264930,Gripe

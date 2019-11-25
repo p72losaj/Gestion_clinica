@@ -2,8 +2,8 @@
 	Declaracion de las clases
 */
 
-#ifndef PERSONA_H
-#define PERSONA_H
+#ifndef FUNCIONES_H
+#define FUNCIONES_H
 
 /*
 #include <cstdio>
@@ -15,6 +15,7 @@
 */
 #include <iostream>
 #include <cstring>
+#include <list>
 #define MAX 100
 using namespace std;
 
@@ -26,14 +27,14 @@ class Paciente{
 
 	private:
 
-		char nombre[MAX];
-		char apellidos[MAX];
-		char direccion[MAX];
-		char nacimiento[MAX];
-		char hospital[MAX];
-		char telefono[MAX];
-		char historial[MAX]; 
-		
+		string nombre;
+		string apellidos;
+		string direccion;
+		string nacimiento;
+		string hospital;
+		string telefono;
+		string historial; 
+		list <Paciente> Pacientes_;
 
 	public:
 
@@ -41,28 +42,41 @@ class Paciente{
 		Constructor de la clase
 		nombre, apellidos, direccion, nacimiento, hospital, telefono, historial
 		*/
-		Paciente(char *, char *, char *, char *, char *, char *, char *);
+		Paciente(string, string, string, string, string, string, string);
+
 		void addPaciente(Paciente& reg);
-		int BuscarPaciente(char* nombre1, char* nombre2);
-		char* LeeNombre(){return nombre;}
-		char* LeeApellidos(){return apellidos;}
-		char* LeeDireccion(){return direccion;}
-		char* LeeNacimiento(){return nacimiento;}
-		char* LeeHospital(){return hospital;}
-		char* LeeTelefono(){return telefono;}
-		char* LeeHistorial(){return historial;}
 		
-		//inline list <Paciente> getPacientes(){ return pacientes_;}
+		string GetNombre(){return nombre;}
+		void SetNombre(string cad){ nombre = cad; }
+
+		string GetApellidos(){return apellidos;}
+		void SetApellidos(string cad){ apellidos = cad; }
+
+		string GetDireccion(){return direccion;}
+		void SetDireccion(string cad){ direccion = cad; }
+
+		string GetNacimiento(){return nacimiento;}
+		void SetNacimiento(string cad){ nacimiento = cad; }
+
+		string GetHospital(){return hospital;}
+		void SetHospital(string cad){ hospital = cad; }
+
+		string GetTelefono(){return telefono;}
+		void SetTelefono(string cad){ telefono = cad;}
+
+		string GetHistorial(){return historial;}
+		void SetHistorial(string cad){ historial = cad; }
+
+		bool BuscarPaciente(string cad);
+		
+		inline list <Paciente> GetPacientes(){ return Pacientes_;}
 
 		/*	
-		
-		void MostrarHistorial(string cad);
-		void MostrarPaciente(string cad);
 		void ModificarPaciente(string cad);
 		void AddTratamiento(string cad);
 		void MostrarTratamiento(string cad);
 		void EliminarPaciente(string cad);
-		void MostrarPacientes();
+		void MostrarListaPacientes();
 		void MostrarCitasPaciente(string cad);
 	*/
 };
