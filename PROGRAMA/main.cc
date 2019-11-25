@@ -87,11 +87,11 @@ void Paciente::addPaciente(Paciente& reg)
 int main(void){
 
   list <Paciente> Pacientes_;
-  string nombre, apellidos, direccion, nacimiento, hospital, telefono, historial;
+  string nombre, apellidos, direccion, nacimiento, hospital, telefono, historial, historial2;
   Paciente p1( nombre,apellidos,direccion, nacimiento,hospital,telefono,historial);
   Paciente P(p1);
   remove("pacientes.txt");
-  int opcion, nr;
+  int opcion, opcion2;
   bool encontrado;
   string cad;
 
@@ -102,6 +102,7 @@ int main(void){
     cout<<"1. Buscar Paciente"<<endl;
     cout<<"2. Mostrar informacion de un paciente"<<endl;
     cout<<"3. Añadir nuevo paciente"<<endl;
+    cout<<"4. Modificar datos paciente"<<endl;
 
     cout<<"Introduce una opcion: "<<endl;
     cin>>opcion;
@@ -156,6 +157,77 @@ int main(void){
           p1.SetHistorial(historial);
           P.addPaciente(p1);
       }
+      break;
+
+      case 4:
+
+        cout<<"Nombre paciente= "<<endl;
+        cin >> nombre;
+        encontrado = P.BuscarPaciente(nombre);
+        if(encontrado == true) 
+        {
+          do
+          {
+            cout<<"0. Volver al menu" <<endl;
+            cout<<"1. Modificar nombre"<<endl;
+            cout<<"2. Modificar apellidos"<<endl;
+            cout<<"3. Modificar direccion"<<endl;
+            cout<<"4. Modificar fecha nacimiento"<<endl;
+            cout<<"5. Modificar hospital procedencia"<<endl;
+            cout<<"6. Modificar numero de telefono"<<endl;
+            cout<<"7. Modificar historial del paciente"<<endl;
+            cout<<"Selecciona opcion: "<<endl;
+            cin >> opcion2;
+            
+            if( opcion2 == 1)
+            {
+              cout<< "Nombre (sin espacios): ";
+              cin >> nombre;
+              p1.SetNombre(nombre);
+            }
+            if( opcion2 == 2 )
+            {
+              cout<<"Apellidos (sin espacios): ";
+              cin >> apellidos;
+              p1.SetApellidos(apellidos);
+            }
+            if( opcion2 == 3 )
+            {
+              cout<<" Nueva direccion sin espacios: ";
+              cin >> direccion;
+              p1.SetDireccion(direccion);
+            }
+            if( opcion2 == 4 )
+            {
+              cout <<" Nueva fecha de nacimiento sin espacios: ";
+              cin >> nacimiento;
+              p1.SetNacimiento(nacimiento);
+            }
+            if( opcion2==5 )
+            {
+              cout<<" Nuevo hospital de procedencia (privado/publico): ";
+              cin>>hospital;
+              p1.SetHospital(hospital);
+            }
+            if( opcion2==6 )
+            {
+              cout<<" Nuevo numero de telefono: ";
+              cin>>telefono;
+              p1.SetTelefono(telefono);
+            }
+            if( opcion2 == 7)
+            {
+              historial2 = p1.GetHistorial();
+              cout<<" Nuevo historial del paciente: ";
+              cin>>historial;
+              p1.SetHistorial( (historial2 + ',' + historial));
+            }
+            cout<<p1<<endl;
+          } while(opcion2 != 0);
+        }
+
+        else cout<<"Error. Paciente no encontrado"<<endl;
+
       break;
     }
 
