@@ -24,7 +24,6 @@ bool Paciente::BuscarPaciente(string cad){
   list <Paciente>:: iterator i;
 
   for(i=Pacientes_.begin(); i!= Pacientes_.end(); i++){
-
     if(i->GetNombre() == cad){
       encontrado = true;
     }
@@ -111,21 +110,33 @@ int main(void){
 
       case 1:
 
-        cout<<"Nombre paciente= "<<endl;
-        cin>> nombre;
-        encontrado = P.BuscarPaciente(nombre);
-        if(encontrado == true) cout<<"Paciente encontrado"<<endl;
-        else cout<<"Error. Paciente no encontrado"<<endl;
+      	if(Pacientes_.empty()==true) cout<<" Lista vacia"<<endl;
+
+  		else
+  		{
+
+  			cout<<"Nombre paciente= "<<endl;
+        	cin>> nombre;
+        	encontrado = P.BuscarPaciente(nombre);
+        	if(encontrado == true) cout<<"Paciente encontrado"<<endl;
+        	else cout<<"Error. Paciente no encontrado"<<endl;
+  		}
+        
 
       break;
 
       case 2:
 
-        cout<<"Nombre paciente= "<<endl;
-        cin>> nombre;
-        encontrado = P.BuscarPaciente(nombre);
-        if(encontrado == true) cout<<p1<<endl;
-        else cout<<"Error. Paciente no encontrado"<<endl;
+      	if(Pacientes_.empty()==true) cout<<" Lista vacia"<<endl;
+      	
+      	else
+      	{
+        	cout<<"Nombre paciente= "<<endl;
+        	cin>> nombre;
+        	encontrado = P.BuscarPaciente(nombre);
+        	if(encontrado == true) cout<<p1<<endl;
+        	else cout<<"Error. Paciente no encontrado"<<endl;
+    	}
 
       break;
 
@@ -225,7 +236,6 @@ int main(void){
             cout<<p1<<endl;
           } while(opcion2 != 0);
         }
-
         else cout<<"Error. Paciente no encontrado"<<endl;
 
       break;

@@ -72,7 +72,7 @@ class Paciente{
 		inline list <Paciente> GetPacientes(){ return Pacientes_;}
 
 		/*	
-		void ModificarPaciente(string cad);
+		
 		void AddTratamiento(string cad);
 		void MostrarTratamiento(string cad);
 		void EliminarPaciente(string cad);
