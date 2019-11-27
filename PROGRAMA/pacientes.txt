@@ -1,1 +1,3 @@
-jaime,lorenzo-sanchez,alcala-zamora-18-2-3,7-12-99,privado,697264930,gripe
+Paco,Pacopaco,Barcelona,11/7/99,Privado,666666666,None
+p,p,p,p,p,p,p
+p,p,p,p,p,p,p

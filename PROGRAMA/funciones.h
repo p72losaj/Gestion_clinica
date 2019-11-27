@@ -33,7 +33,7 @@ class Paciente{
 		string nacimiento;
 		string hospital;
 		string telefono;
-		string historial; 
+		string historial;
 		list <Paciente> Pacientes_;
 
 	public:
@@ -45,7 +45,7 @@ class Paciente{
 		Paciente(string, string, string, string, string, string, string);
 
 		void addPaciente(Paciente& reg);
-		
+
 		string GetNombre(){return nombre;}
 		void SetNombre(string cad){ nombre = cad; }
 
@@ -68,10 +68,10 @@ class Paciente{
 		void SetHistorial(string cad){ historial = cad; }
 
 		bool BuscarPaciente(string cad);
-		
+
 		inline list <Paciente> GetPacientes(){ return Pacientes_;}
 
-		/*	
+		/*
 		void ModificarPaciente(string cad);
 		void AddTratamiento(string cad);
 		void MostrarTratamiento(string cad);
@@ -80,12 +80,24 @@ class Paciente{
 		void MostrarCitasPaciente(string cad);
 	*/
 };
-	
-	/*
-		Funciones clase Cita
-		Clase cita hereda la clase paciente
-	*/
-/*
+
+void cargaLista(list <Paciente>);
+
+class Cita{
+
+private:
+
+	Paciente paciente_;
+	string hora_;
+	string fecha_;
+	string motivo_;
+
+public:
+
+	Cita(Paciente,string,string,string);
+
+	Paciente& getPaciente(){return paciente_;}
+
 	// Obtener la hora de la cita
 	inline string getHora() const { return hora_; }
 	// Modificar la hora de la cita
@@ -98,7 +110,8 @@ class Paciente{
 	inline string getMotivo() const { return motivo_; }
 	// Modificar motivo de la cita
 	inline string setMotivo(string cad) { motivo_ = cad;}
-*/
+
+};
 	/*
 		Funciones clase tratamiento
 

@@ -7,7 +7,7 @@ using namespace std;
 
 
 
-Paciente::Paciente(string n, string a, string d, string fn, string ht, string t, string hm) { 
+Paciente::Paciente(string n, string a, string d, string fn, string ht, string t, string hm) {
    nombre = n;
    apellidos = a;
    direccion = d;
@@ -17,10 +17,17 @@ Paciente::Paciente(string n, string a, string d, string fn, string ht, string t,
    historial = hm;
 }
 
+Cita::Cita(Paciente p,string h, string f, string m):paciente_(p){
+  paciente_ = p;
+  hora_ = h;
+  fecha_ = f;
+  motivo_ = m;
+}
+
 bool Paciente::BuscarPaciente(string cad){
 
   bool encontrado = false;
-  
+
   list <Paciente>:: iterator i;
 
   for(i=Pacientes_.begin(); i!= Pacientes_.end(); i++){
@@ -29,8 +36,8 @@ bool Paciente::BuscarPaciente(string cad){
       encontrado = true;
     }
   }
-  
-  return encontrado;  
+
+  return encontrado;
 }
 ostream& operator<<(ostream &os, Paciente& reg) {
     os << "Nombre: " << reg.GetNombre() << endl;
@@ -60,14 +67,13 @@ void Paciente::addPaciente(Paciente& reg)
     file<<reg.GetHistorial()<<endl;
 
     // Leemos el fichero
-      while( !file.eof() ){
-        getline(file, aux);
-        
+
+
         // añadimos el paciente a la lista
         Pacientes_.push_back(reg);
-      }
+
     // Cerramos el fichero
-    file.close(); 
+    file.close();
   }
 
   // Mostramos la lista por pantalla
@@ -83,14 +89,39 @@ void Paciente::addPaciente(Paciente& reg)
   }
 }
 
+void cargaLista(list <Paciente> p) {
+
+  string nombre, apellidos, direccion, nacimiento, hospital, telefono, historial,aux;
+  ifstream fichero;
+  fichero.open("pacientes.txt");
+  while (getline(fichero,aux,',') && !fichero.eof()) {
+    nombre = aux;
+    getline(fichero,aux,',');
+    apellidos = aux;
+    getline(fichero,aux,',');
+    direccion = aux;
+    getline(fichero,aux,',');
+    nacimiento = aux;
+    getline(fichero,aux,',');
+    hospital = aux;
+    getline(fichero,aux,',');
+    telefono = aux;
+    getline(fichero,aux,'\n');
+    historial = aux;
+    Paciente p1(nombre,apellidos,direccion,nacimiento,hospital,telefono,historial);
+    p.push_back(p1);
+  }
+
+  fichero.close();
+}
 
 int main(void){
 
   list <Paciente> Pacientes_;
+  cargaLista (Pacientes_);
   string nombre, apellidos, direccion, nacimiento, hospital, telefono, historial, historial2;
-  Paciente p1( nombre,apellidos,direccion, nacimiento,hospital,telefono,historial);
+  Paciente p1(nombre,apellidos,direccion, nacimiento,hospital,telefono,historial);
   Paciente P(p1);
-  remove("pacientes.txt");
   int opcion, opcion2;
   bool encontrado;
   string cad;
@@ -106,16 +137,18 @@ int main(void){
 
     cout<<"Introduce una opcion: "<<endl;
     cin>>opcion;
-    
+
     switch(opcion){
 
       case 1:
+
 
         cout<<"Nombre paciente= "<<endl;
         cin>> nombre;
         encontrado = P.BuscarPaciente(nombre);
         if(encontrado == true) cout<<"Paciente encontrado"<<endl;
         else cout<<"Error. Paciente no encontrado"<<endl;
+
 
       break;
 
@@ -130,7 +163,7 @@ int main(void){
       break;
 
       case 3:
-        
+
         cout<<"Nombre paciente= "<<endl;
         cin>> nombre;
         encontrado = P.BuscarPaciente(nombre);
@@ -156,6 +189,7 @@ int main(void){
           cin >> historial;
           p1.SetHistorial(historial);
           P.addPaciente(p1);
+
       }
       break;
 
@@ -164,7 +198,7 @@ int main(void){
         cout<<"Nombre paciente= "<<endl;
         cin >> nombre;
         encontrado = P.BuscarPaciente(nombre);
-        if(encontrado == true) 
+        if(encontrado == true)
         {
           do
           {
@@ -178,7 +212,7 @@ int main(void){
             cout<<"7. Modificar historial del paciente"<<endl;
             cout<<"Selecciona opcion: "<<endl;
             cin >> opcion2;
-            
+
             if( opcion2 == 1)
             {
               cout<< "Nombre (sin espacios): ";
@@ -232,6 +266,6 @@ int main(void){
     }
 
   } while(opcion!=0);
-  
+
   return 0;
 }
