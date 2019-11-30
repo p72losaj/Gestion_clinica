@@ -4,15 +4,6 @@
 
 #ifndef FUNCIONES_H
 #define FUNCIONES_H
-
-/*
-#include <cstdio>
-#include <cstdlib>
-#include <string>
-#include <list>
-#include <iostream>
-#include <fstream>
-*/
 #include <iostream>
 #include <cstring>
 #include <list>
@@ -20,7 +11,7 @@
 using namespace std;
 
 /*
-	Funciones clase paciente
+	Clase paciente
 */
 
 class Paciente{
@@ -43,78 +34,34 @@ class Paciente{
 		nombre, apellidos, direccion, nacimiento, hospital, telefono, historial
 		*/
 		Paciente(string, string, string, string, string, string, string);
-
+		// Añadimos un paciente al fichero
 		void addPaciente(Paciente& reg);
-		
+		// Funciones del nombre
 		string GetNombre(){return nombre;}
 		void SetNombre(string cad){ nombre = cad; }
-
+		// Funciones apellidos
 		string GetApellidos(){return apellidos;}
 		void SetApellidos(string cad){ apellidos = cad; }
-
+		// Funciones direccion
 		string GetDireccion(){return direccion;}
 		void SetDireccion(string cad){ direccion = cad; }
-
+		// Funciones nacimiento
 		string GetNacimiento(){return nacimiento;}
 		void SetNacimiento(string cad){ nacimiento = cad; }
-
+		// Funciones hospital
 		string GetHospital(){return hospital;}
 		void SetHospital(string cad){ hospital = cad; }
-
+		// Funciones telefono
 		string GetTelefono(){return telefono;}
 		void SetTelefono(string cad){ telefono = cad;}
-
+		// Funciones historial
 		string GetHistorial(){return historial;}
 		void SetHistorial(string cad){ historial = cad; }
-
+		// Buscar paciente por nombre
 		bool BuscarPaciente(string cad);
-		
+		// Guardamos el fichero pacientes.txt en la lista de pacientes
+		void leePacientes();
+		// Obtener numero de pacientes en la lista de pacientes
 		inline list <Paciente> GetPacientes(){ return Pacientes_;}
-
-		/*	
-		void AddTratamiento(string cad);
-		void MostrarTratamiento(string cad);
-		void EliminarPaciente(string cad);
-		void MostrarListaPacientes();
-		void MostrarCitasPaciente(string cad);
-	*/
 };
-	
-	/*
-		Funciones clase Cita
-		Clase cita hereda la clase paciente
-	*/
-/*
-	// Obtener la hora de la cita
-	inline string getHora() const { return hora_; }
-	// Modificar la hora de la cita
-	inline string setHora( string cad) { hora_ = cad; }
-	// Obtener la fecha de la cita
-	inline string getFecha() const { return fecha_; }
-	// Modificar la fecha de la cita
-	inline string setFecha( string cad) { fecha_ = cad; }
-	// Obtener el motivo de la cita
-	inline string getMotivo() const { return motivo_; }
-	// Modificar motivo de la cita
-	inline string setMotivo(string cad) { motivo_ = cad;}
-*/
-	/*
-		Funciones clase tratamiento
-
-		Clase tratamiento hereda la clase Persona
-	*/
-/*
-	 // Obtener el nombre del tratamiento
-	inline string getTratamiento() const { return tratamiento_; }
-	// Modificar nombre tratamiento
-	inline string setTratamiento( string cad) { tratamiento_ = cad; }
-	// Obtener fecha comienzo tratamiento
-	inline string getInicio() const { return inicio_; }
-	// Obtener fecha fin tratamiento
-	inline string getFin() const { return fin_; }
-	// Obtener dosis tratamiento
-	inline string getDosis() const { return dosis_; }
-	// Modificar dosis tratamineto
-	inline string setDosis( string cad){ dosis_ cad; }
-	*/
 #endif
