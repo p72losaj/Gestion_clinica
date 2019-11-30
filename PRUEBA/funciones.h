@@ -63,5 +63,6 @@ class Paciente{
 		void leePacientes();
 		// Obtener numero de pacientes en la lista de pacientes
 		inline list <Paciente> GetPacientes(){ return Pacientes_;}
+		
 };
 #endif

@@ -5,7 +5,8 @@
 #include "funciones.h"
 using namespace std;
 
-// Constructor de la lista pacientes
+
+
 Paciente::Paciente(string n, string a, string d, string fn, string ht, string t, string hm) { 
    nombre = n;
    apellidos = a;
@@ -16,7 +17,6 @@ Paciente::Paciente(string n, string a, string d, string fn, string ht, string t,
    historial = hm;
 }
 
-// Funcion que buscar al paciente en la lista
 bool Paciente::BuscarPaciente(string cad){
 
   bool encontrado = false;
@@ -33,7 +33,6 @@ bool Paciente::BuscarPaciente(string cad){
   return encontrado;  
 }
 
-// Funcion que imprime por pantalla un paciente
 ostream& operator<<(ostream &os, Paciente& reg) {
     os << "Nombre: " << reg.GetNombre() << endl;
     os << "Apellidos: "<<reg.GetApellidos()<<endl;
@@ -45,7 +44,6 @@ ostream& operator<<(ostream &os, Paciente& reg) {
    return os;
 }
 
-// Funcion que añade un paciente al fichero pacientes.txt
 void Paciente::addPaciente(Paciente& reg)
 {
   string aux;
@@ -64,13 +62,27 @@ void Paciente::addPaciente(Paciente& reg)
     // Cerramos el fichero
     file.close(); 
   }
+
+  // Mostramos la lista por pantalla
+  cout<<" Leyendo lista"<<endl;
+  for(i=Pacientes_.begin(); i!=Pacientes_.end(); i++){
+    cout<<"\tNombre: "<<i->GetNombre()<<endl;
+    cout<<"\tApellidos: "<<i->GetApellidos()<<endl;
+    cout<<"\tDireccion: "<<i->GetDireccion()<<endl;
+    cout<<"\tNacimiento: "<<i->GetNacimiento()<<endl;
+    cout<<"\tHospital: "<<i->GetHospital()<<endl;
+    cout<<"\tTelefono: "<<i->GetTelefono()<<endl;
+    cout<<"\tHistorial: "<<i->GetHistorial()<<endl;
+  }
 }
 
-// Funcion principal
+
 int main(void){
+
   list <Paciente> Pacientes_;
   string nombre, apellidos, direccion, nacimiento, hospital, telefono, historial, historial2;
-  Paciente p1( nombre,apellidos,direccion, nacimiento,hospital,telefono,historial);
+  Paciente p1( "Jaime","Lorenzo_Sanchez","c/AlcalaZamora-18/2/3",
+                "07/12/99","privado","697264930","gripe");
   Paciente P(p1);
   int opcion, opcion2;
   bool encontrado;
@@ -84,27 +96,34 @@ int main(void){
     cout<<"2. Mostrar informacion de un paciente"<<endl;
     cout<<"3. Añadir nuevo paciente"<<endl;
     cout<<"4. Modificar datos paciente"<<endl;
-    cout<<"5. Añadir pacientes del fichero pacientes.txt a la lista de pacientes"<<endl;
-    cout<<"6. Eliminar un paciente"<<endl;
+    cout<<"5. Añadir a lista pacientes"<<endl;
+    cout<<"6. Mostrar lista pacientes"<<endl;
     cout<<"Introduce una opcion: "<<endl;
     cin>>opcion;
     
     switch(opcion){
+
       case 1:
+
   		cout<<"Nombre paciente= "<<endl;
       cin>> nombre;
       encontrado = P.BuscarPaciente(nombre);
       if(encontrado == true) cout<<"Paciente encontrado"<<endl;
       else cout<<"Error. Paciente no encontrado"<<endl;
       break;
+
       case 2:
+
         cout<<"Nombre paciente= "<<endl;
         cin>> nombre;
         encontrado = P.BuscarPaciente(nombre);
         if(encontrado == true) cout<<p1<<endl;
         else cout<<"Error. Paciente no encontrado"<<endl;
+
       break;
+
       case 3:
+
         cout<<"Nombre paciente= "<<endl;
         cin>> nombre;
         encontrado = P.BuscarPaciente(nombre);
@@ -132,8 +151,11 @@ int main(void){
         	p1.SetHistorial(historial);
         	P.addPaciente(p1);
      	}
+
       break;
+
       case 4:
+        /*
 		    cout<<"Nombre paciente= "<<endl;
         cin >> nombre;
         encontrado = P.BuscarPaciente(nombre);
@@ -148,53 +170,53 @@ int main(void){
         		cout<<"4. Modificar fecha nacimiento"<<endl;
         		cout<<"5. Modificar hospital procedencia"<<endl;
         		cout<<"6. Modificar numero de telefono"<<endl;
-            	cout<<"7. Modificar historial del paciente"<<endl;
-            	cout<<"Selecciona opcion: "<<endl;
-            	cin >> opcion2;
+            cout<<"7. Modificar historial del paciente"<<endl;
+            cout<<"Selecciona opcion: "<<endl;
+            cin >> opcion2;
             	
-            	if( opcion2 == 1)
+            if( opcion2 == 1)
             	{
             		cout<< "Nombre (sin espacios): ";
             		cin >> nombre;
             		p1.SetNombre(nombre);
             	}
             
-           		if( opcion2 == 2 )
+           	if( opcion2 == 2 )
             	{
             		cout<<"Apellidos (sin espacios): ";
             		cin >> apellidos;
             		p1.SetApellidos(apellidos);
             	}
             
-            	if( opcion2 == 3 )
+            if( opcion2 == 3 )
             	{
             		cout<<" Nueva direccion sin espacios: ";
             		cin >> direccion;
             		p1.SetDireccion(direccion);
             	}
            
-            	if( opcion2 == 4 )
+            if( opcion2 == 4 )
 	        	{
     	    	    cout <<" Nueva fecha de nacimiento sin espacios: ";
             	  	cin >> nacimiento;
             	  	p1.SetNacimiento(nacimiento);
             	}
             
-            	if( opcion2==5 )
+            if( opcion2==5 )
             	{
             		cout<<" Nuevo hospital de procedencia (privado/publico): ";
-					cin>>hospital;
+				      	cin>>hospital;
             		p1.SetHospital(hospital);
             	}
             		
-            	if( opcion2==6 )
+            if( opcion2==6 )
             	{
             		cout<<" Nuevo numero de telefono: ";
             		cin>>telefono;
             		p1.SetTelefono(telefono);
             	}
             	
-            	if( opcion2 == 7)
+            if( opcion2 == 7)
             	{
             	  historial2 = p1.GetHistorial();
             	  cout<<" Nuevo historial del paciente: ";
@@ -203,13 +225,21 @@ int main(void){
             	}
 
             	cout<<p1<<endl;
-
           	} while(opcion2 != 0);
         }
         else cout<<"Error. Paciente no encontrado"<<endl;
+        */
       break;
+
       case 5:
+          cout<<"Añadiendo fichero pacientes.txt a lista"<<endl;
+          P.leePacientes();
+      break;
+
+      case 6:
+        cout<<"Mostrando lista pacientes"<<endl;
         P.leePacientes();
+        cout<<P<<endl;
       break;
     }
 

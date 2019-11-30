@@ -1,9 +1,12 @@
 #include "funciones.h"
 #include <iostream>
 #include <cstring>
+#include <cstdlib>
+#include <cstdio>
 #include <fstream>
 #include <list>
 using namespace std;
+
 void Paciente::leePacientes()
 {
 
@@ -29,16 +32,5 @@ void Paciente::leePacientes()
 		aux.SetHistorial(cadaux);
 		Pacientes_.push_back(aux);
 	}
-	for(i=Pacientes_.begin(); i!=Pacientes_.end(); i++)
-	{
-    	cout<<"\tNombre: "<<i->GetNombre()<<endl;
-    	cout<<"\tApellidos: "<<i->GetApellidos()<<endl;
-    	cout<<"\tDireccion: "<<i->GetDireccion()<<endl;
-    	cout<<"\tNacimiento: "<<i->GetNacimiento()<<endl;
-    	cout<<"\tHospital: "<<i->GetHospital()<<endl;
-    	cout<<"\tTelefono: "<<i->GetTelefono()<<endl;
-    	cout<<"\tHistorial: "<<i->GetHistorial()<<endl;
-  	}
-
 	fichero.close();	
 }
