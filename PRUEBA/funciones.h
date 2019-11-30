@@ -36,6 +36,8 @@ class Paciente{
 		Paciente(string, string, string, string, string, string, string);
 		// Añadimos un paciente al fichero
 		void addPaciente(Paciente& reg);
+		// Mostramos la lista de pacientes
+		void MostrarPacientes();
 		// Funciones del nombre
 		string GetNombre(){return nombre;}
 		void SetNombre(string cad){ nombre = cad; }

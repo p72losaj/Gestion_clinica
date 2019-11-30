@@ -5,35 +5,9 @@
 #include "funciones.h"
 using namespace std;
 
-
-
-Paciente::Paciente(string n, string a, string d, string fn, string ht, string t, string hm) { 
-   nombre = n;
-   apellidos = a;
-   direccion = d;
-   nacimiento = fn;
-   hospital = ht;
-   telefono = t;
-   historial = hm;
-}
-
-bool Paciente::BuscarPaciente(string cad){
-
-  bool encontrado = false;
-  
-  list <Paciente>:: iterator i;
-  if(Pacientes_.empty()==true) cout<<" Lista vacia"<<endl;
-
-  for(i=Pacientes_.begin(); i!= Pacientes_.end(); i++){
-    if(i->GetNombre() == cad){
-      encontrado = true;
-    }
-  }
-  
-  return encontrado;  
-}
-
-ostream& operator<<(ostream &os, Paciente& reg) {
+// Mostrar datos de un paciente. No pasar a otro fichero. Funcion definitiva
+ostream& operator<<(ostream &os, Paciente& reg) 
+{
     os << "Nombre: " << reg.GetNombre() << endl;
     os << "Apellidos: "<<reg.GetApellidos()<<endl;
     os << "Direccion: "<<reg.GetDireccion()<<endl;
@@ -42,6 +16,13 @@ ostream& operator<<(ostream &os, Paciente& reg) {
     os << "Numero de telefono: "<<reg.GetTelefono()<<endl;
     os << "Historial del paciente: "<<reg.GetHistorial()<<endl;
    return os;
+}
+
+istream& operator>>(istream &is, Paciente& p)
+{
+  string cad;
+  cout<<"Añadiendo nuevos datos"<<endl;
+  return is;
 }
 
 void Paciente::addPaciente(Paciente& reg)
@@ -62,18 +43,6 @@ void Paciente::addPaciente(Paciente& reg)
     // Cerramos el fichero
     file.close(); 
   }
-
-  // Mostramos la lista por pantalla
-  cout<<" Leyendo lista"<<endl;
-  for(i=Pacientes_.begin(); i!=Pacientes_.end(); i++){
-    cout<<"\tNombre: "<<i->GetNombre()<<endl;
-    cout<<"\tApellidos: "<<i->GetApellidos()<<endl;
-    cout<<"\tDireccion: "<<i->GetDireccion()<<endl;
-    cout<<"\tNacimiento: "<<i->GetNacimiento()<<endl;
-    cout<<"\tHospital: "<<i->GetHospital()<<endl;
-    cout<<"\tTelefono: "<<i->GetTelefono()<<endl;
-    cout<<"\tHistorial: "<<i->GetHistorial()<<endl;
-  }
 }
 
 
@@ -86,7 +55,6 @@ int main(void){
   Paciente P(p1);
   int opcion, opcion2;
   bool encontrado;
-  string cad;
 
   do{
 
@@ -130,6 +98,9 @@ int main(void){
         if(encontrado == true) cout<<"Error. Paciente ya existente"<<endl;
         else
         {
+          cin >> P;
+          cout<<P<<endl;
+          /*
         	p1.SetNombre(nombre);
         	cout<<"Apellidos sin espacios: ";
         	cin>> apellidos;
@@ -150,12 +121,12 @@ int main(void){
         	cin >> historial;
         	p1.SetHistorial(historial);
         	P.addPaciente(p1);
+          */
      	}
-
       break;
 
       case 4:
-        /*
+        
 		    cout<<"Nombre paciente= "<<endl;
         cin >> nombre;
         encontrado = P.BuscarPaciente(nombre);
@@ -228,7 +199,7 @@ int main(void){
           	} while(opcion2 != 0);
         }
         else cout<<"Error. Paciente no encontrado"<<endl;
-        */
+        
       break;
 
       case 5:
@@ -237,9 +208,8 @@ int main(void){
       break;
 
       case 6:
-        cout<<"Mostrando lista pacientes"<<endl;
-        P.leePacientes();
-        cout<<P<<endl;
+        cout<<"Mostrando pacientes en la lista\n"<<endl;
+        P.MostrarPacientes();
       break;
     }
 
