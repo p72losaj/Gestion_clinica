@@ -17,34 +17,77 @@ ostream& operator<<(ostream &os, Paciente& reg)
     os << "Historial del paciente: "<<reg.GetHistorial()<<endl;
    return os;
 }
-
-istream& operator>>(istream &is, Paciente& p)
-{
-  string cad;
-  cout<<"Añadiendo nuevos datos"<<endl;
-  return is;
-}
-
-void Paciente::addPaciente(Paciente& reg)
+// Mantener en este fichero
+void modificarFichero(Paciente p)
 {
   string aux;
-  list <Paciente>::iterator i;
-  fstream file("pacientes.txt", ios::app);
-  if(!file) cout<<"Error acceso fichero"<<endl;
-  else{
+  // fichero principal
+  ifstream file("pacientes.txt");
+  // Creamos un fichero auxiliar
+  ofstream file2("aux.txt");
+  if(!file2 or !file) cout<<"Error acceso fichero"<<endl;
+  else
+  {
 
-    file<<reg.GetNombre()+",";
-    file<<reg.GetApellidos()+",";
-    file<<reg.GetDireccion()+",";
-    file<<reg.GetNacimiento()+",";
-    file<<reg.GetHospital()+",";
-    file<<reg.GetTelefono()<<+",";
-    file<<reg.GetHistorial()<<endl;
-    // Cerramos el fichero
-    file.close(); 
+    // Recorremos file y guardamos en file2
+    while(getline(file,aux,',') && !file.eof())
+    {
+      if(aux != p.GetNombre()) file2<<p.GetNombre()+",";
+      else
+      {
+        p.SetNombre(aux);
+        file2<<p.GetNombre()+",";
+      } 
+      getline(file,aux,',');
+      if(aux != p.GetApellidos()) file2<<p.GetApellidos()+",";
+      else
+      {
+        p.SetApellidos(aux);
+        file2<<p.GetApellidos()+",";
+      } 
+      getline(file,aux,',');
+      if(aux != p.GetDireccion()) file2<<p.GetDireccion()+",";
+      else
+      {
+        p.SetDireccion(aux);
+        file2<<p.GetDireccion()+",";
+      } 
+      getline(file,aux,',');
+      if(aux != p.GetNacimiento()) file2<<p.GetNacimiento()+",";
+      else
+      {
+        p.SetNacimiento(aux);
+        file2<<p.GetNacimiento()+",";
+      } 
+      getline(file,aux,',');
+      if(aux != p.GetHospital()) file2<<p.GetHospital()+",";
+      else
+      {
+        p.SetHospital(aux);
+        file2<<p.GetHospital()+",";
+      }
+      getline(file,aux,',');
+      if(aux != p.GetTelefono()) file2<<p.GetTelefono()+",";
+      else
+      {
+        p.SetTelefono(aux);
+        file2<<p.GetTelefono()+",";
+      }
+      getline(file,aux,'\n');
+      if(aux != p.GetHistorial()) file2<<p.GetHistorial()<<endl;
+      else
+      {
+        p.SetHistorial(aux);
+        file2<<p.GetHistorial()<<endl;
+      }
+    }
+    // Cerramos los ficheros
+    file.close();
+    file2.close();
+    //Renombramos file2
+    rename("aux.txt", "pacientes.txt");
   }
 }
-
 
 int main(void){
 
@@ -53,6 +96,7 @@ int main(void){
   Paciente p1( "Jaime","Lorenzo_Sanchez","c/AlcalaZamora-18/2/3",
                 "07/12/99","privado","697264930","gripe");
   Paciente P(p1);
+  P.leePacientes();
   int opcion, opcion2;
   bool encontrado;
 
@@ -73,11 +117,12 @@ int main(void){
 
       case 1:
 
-  		cout<<"Nombre paciente= "<<endl;
+  		cout<<"Nombre paciente= ";
       cin>> nombre;
       encontrado = P.BuscarPaciente(nombre);
       if(encontrado == true) cout<<"Paciente encontrado"<<endl;
       else cout<<"Error. Paciente no encontrado"<<endl;
+
       break;
 
       case 2:
@@ -85,7 +130,7 @@ int main(void){
         cout<<"Nombre paciente= "<<endl;
         cin>> nombre;
         encontrado = P.BuscarPaciente(nombre);
-        if(encontrado == true) cout<<p1<<endl;
+        if(encontrado == true) cout<<P<<endl;
         else cout<<"Error. Paciente no encontrado"<<endl;
 
       break;
@@ -98,31 +143,29 @@ int main(void){
         if(encontrado == true) cout<<"Error. Paciente ya existente"<<endl;
         else
         {
-          cin >> P;
-          cout<<P<<endl;
-          /*
-        	p1.SetNombre(nombre);
-        	cout<<"Apellidos sin espacios: ";
-        	cin>> apellidos;
-        	p1.SetApellidos(apellidos);
-        	cout<<"Direccion sin espacios: ";
-        	cin>> direccion;
-        	p1.SetDireccion(direccion);
-        	cout<<"Nacimiento paciente: ";
-        	cin >> nacimiento;
-        	p1.SetNacimiento(nacimiento);
-        	cout<<"Hospital privado/publico: ";
-        	cin >> hospital;
-        	p1.SetHospital(hospital);
-        	cout<<"Numero telefono= ";
-        	cin >> telefono;
-        	p1.SetTelefono(telefono);
-        	cout<<"Historial = ";
-        	cin >> historial;
-        	p1.SetHistorial(historial);
-        	P.addPaciente(p1);
-          */
-     	}
+          p1.SetNombre(nombre);
+          cout<<"Apellidos sin espacios: ";
+          cin>> apellidos;
+          p1.SetApellidos(apellidos);
+          cout<<"Direccion sin espacios: ";
+          cin>> direccion;
+          p1.SetDireccion(direccion);
+          cout<<"Nacimiento paciente: ";
+          cin >> nacimiento;
+          p1.SetNacimiento(nacimiento);
+          cout<<"Hospital privado/publico: ";
+          cin >> hospital;
+          p1.SetHospital(hospital);
+          cout<<"Numero telefono= ";
+          cin >> telefono;
+          p1.SetTelefono(telefono);
+          cout<<"Historial = ";
+          cin >> historial;
+          p1.SetHistorial(historial);
+          Paciente P(p1);
+          P.addPaciente(p1);
+     	  }
+
       break;
 
       case 4:
@@ -195,8 +238,12 @@ int main(void){
             	  p1.SetHistorial( (historial2 + ',' + historial));
             	}
 
-            	cout<<p1<<endl;
           	} while(opcion2 != 0);
+
+            Paciente P(p1);
+            cout<<"Mostrando paciente modificado\n"<<endl;
+            cout<<P<<endl;
+            modificarFichero(P);
         }
         else cout<<"Error. Paciente no encontrado"<<endl;
         

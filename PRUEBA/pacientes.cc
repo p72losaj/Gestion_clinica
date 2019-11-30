@@ -4,6 +4,7 @@
 #include <cstring>
 #include <fstream>
 #include <list>
+#include <stdio.h>
 #include "funciones.h"
 
 using namespace std;
@@ -45,7 +46,8 @@ Paciente::Paciente(string n, string a, string d, string fn, string ht, string t,
    historial = hm;
 }
 
-bool Paciente::BuscarPaciente(string cad){
+bool Paciente::BuscarPaciente(string cad)
+{
   bool encontrado = false;
   list <Paciente>:: iterator i;
   if(Pacientes_.empty()==true) cout<<" Lista vacia"<<endl;
@@ -71,4 +73,24 @@ void Paciente::MostrarPacientes()
         cout<<"Telefono paciente: "<<i->GetTelefono()<<endl;
         cout<<"Historia paciente: "<<i->GetHistorial()<<endl;
       }   
+}
+
+void Paciente::addPaciente(Paciente& reg)
+{
+  list <Paciente>::iterator i;
+  fstream file("pacientes.txt", ios::app);
+  if(!file) cout<<"Error acceso fichero"<<endl;
+  else{
+
+    file<<reg.GetNombre()+",";
+    file<<reg.GetApellidos()+",";
+    file<<reg.GetDireccion()+",";
+    file<<reg.GetNacimiento()+",";
+    file<<reg.GetHospital()+",";
+    file<<reg.GetTelefono()<<+",";
+    file<<reg.GetHistorial()<<endl;
+
+    // Cerramos el fichero
+    file.close(); 
+  }
 }

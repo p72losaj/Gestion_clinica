@@ -34,6 +34,8 @@ class Paciente{
 		nombre, apellidos, direccion, nacimiento, hospital, telefono, historial
 		*/
 		Paciente(string, string, string, string, string, string, string);
+		// Modificamos los datos del fichero
+		void modificarFichero(Paciente p);
 		// Añadimos un paciente al fichero
 		void addPaciente(Paciente& reg);
 		// Mostramos la lista de pacientes
