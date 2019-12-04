@@ -5,53 +5,23 @@
 #include "funciones.h"
 using namespace std;
 
-/*
+
 Cita::Cita(Paciente p,string h, string f, string m):paciente_(p){
   paciente_ = p;
   hora_ = h;
   fecha_ = f;
   motivo_ = m;
 }
-*/
-
-/*
-list <Paciente> cargaLista() {
-
-  list <Paciente> p;
-  string nombre, apellidos, direccion, nacimiento, hospital, telefono, historial,aux;
-  ifstream fichero;
-  fichero.open("pacientes.txt");
-  while (getline(fichero,aux,',') && !fichero.eof()) {
-    nombre = aux;
-    getline(fichero,aux,',');
-    apellidos = aux;
-    getline(fichero,aux,',');
-    direccion = aux;
-    getline(fichero,aux,',');
-    nacimiento = aux;
-    getline(fichero,aux,',');
-    hospital = aux;
-    getline(fichero,aux,',');
-    telefono = aux;
-    getline(fichero,aux,'\n');
-    historial = aux;
-    Paciente p1(nombre,apellidos,direccion,nacimiento,hospital,telefono,historial);
-    p.push_back(p1);
-  }
-
-  fichero.close();
-  
-  return p;
-}
-*/
 
 
 int main(void){
 
   string nombre, apellidos, direccion, nacimiento, hospital, telefono, historial, historial2;
+
   Paciente p1( "Jaime","Lorenzo_Sanchez","c/AlcalaZamora-18/2/3",
                 "07/12/99","privado","697264930","gripe");
   Paciente P(p1);
+  Cita C(P, "9:30-11:00", "04/12/2019", "revision");
   P.leePacientes();
   int opcion, opcion2;
   bool encontrado;
@@ -87,14 +57,15 @@ int main(void){
         cout<<"Nombre paciente= "<<endl;
         cin>> nombre;
         encontrado = P.BuscarPaciente(nombre);
-        /*
+        
         if(encontrado == true)
         {
+
+          P.CambiarDatos(nombre, P);
           cout<<P<<endl;
         } 
-        */
         else cout<<"Error. Paciente no encontrado"<<endl;
-
+        
       break;
 
       case 3:

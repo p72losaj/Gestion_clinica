@@ -5,9 +5,6 @@
 #include "funciones.h"
 using namespace std;
 
-
-
-
 int main(void){
 
   string nombre, apellidos, direccion, nacimiento, hospital, telefono, historial, historial2;
@@ -49,14 +46,15 @@ int main(void){
         cout<<"Nombre paciente= "<<endl;
         cin>> nombre;
         encontrado = P.BuscarPaciente(nombre);
-        /*
+        
         if(encontrado == true)
         {
+
+          P.CambiarDatos(nombre, P);
           cout<<P<<endl;
         } 
-        */
         else cout<<"Error. Paciente no encontrado"<<endl;
-
+        
       break;
 
       case 3:

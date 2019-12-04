@@ -1,4 +1,4 @@
-// Funciones definitivas
+// Funciones clase paciente
 
 #include <iostream>
 #include <cstring>
@@ -9,6 +9,34 @@
 
 using namespace std;
 
+
+void Paciente::CambiarDatos(string nombre, Paciente& reg)
+{
+  list<Paciente>:: iterator i;
+  for(i=Pacientes_.begin();i!=Pacientes_.end();i++)
+    {
+
+      if(i->GetNombre() == nombre)
+      {
+
+        reg.SetNombre(nombre);
+        nombre = i->GetApellidos();
+        reg.SetApellidos(nombre);
+        nombre = i->GetDireccion();
+        reg.SetDireccion(nombre);
+        nombre = i->GetNacimiento();
+        reg.SetNacimiento(nombre);
+        nombre = i->GetHospital();
+        reg.SetHospital(nombre);
+        nombre = i->GetTelefono();
+        reg.SetTelefono(nombre);
+        nombre = i->GetHistorial();
+        reg.SetHistorial(nombre);
+
+      }
+      
+    } 
+}
 ostream& operator<<(ostream &os, Paciente& reg) 
 {
     os << "Nombre: " << reg.GetNombre() << endl;
