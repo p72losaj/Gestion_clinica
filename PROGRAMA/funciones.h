@@ -67,16 +67,16 @@ class Paciente{
 		string GetHistorial(){return historial;}
 		void SetHistorial(string cad){ historial = cad; }
 
-		bool BuscarPaciente(string cad);
+		bool BuscarPaciente(string cad,list <Paciente>);
 
 		inline list <Paciente> GetPacientes(){ return Pacientes_;}
 
-<<<<<<< HEAD
+
 		/*
 		void ModificarPaciente(string cad);
-=======
+
 		/*	
->>>>>>> 38822ec7c87abdcfbcad6acb7c0d5d2072c5600b
+
 		void AddTratamiento(string cad);
 		void MostrarTratamiento(string cad);
 		void EliminarPaciente(string cad);
@@ -85,7 +85,7 @@ class Paciente{
 	*/
 };
 
-void cargaLista(list <Paciente>);
+list <Paciente> cargaLista();
 
 class Cita{
 

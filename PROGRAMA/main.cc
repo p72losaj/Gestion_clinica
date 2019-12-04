@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include <cstring>
 #include <fstream>
 #include <list>
@@ -24,14 +25,13 @@ Cita::Cita(Paciente p,string h, string f, string m):paciente_(p){
   motivo_ = m;
 }
 
-bool Paciente::BuscarPaciente(string cad){
+bool Paciente::BuscarPaciente(string cad,list <Paciente> p){
 
   bool encontrado = false;
 
   list <Paciente>:: iterator i;
-  if(Pacientes_.empty()==true) cout<<" Lista vacia"<<endl;
 
-  for(i=Pacientes_.begin(); i!= Pacientes_.end(); i++){
+  for(i=p.begin(); i!= p.end(); i++){
     if(i->GetNombre() == cad){
       encontrado = true;
     }
@@ -56,6 +56,7 @@ void Paciente::addPaciente(Paciente& reg)
   string aux;
   list <Paciente>::iterator i;
   fstream file("pacientes.txt", ios::app);
+  
   if(!file) cout<<"Error acceso fichero"<<endl;
   else{
 
@@ -66,35 +67,26 @@ void Paciente::addPaciente(Paciente& reg)
     file<<reg.GetHospital()+",";
     file<<reg.GetTelefono()<<+",";
     file<<reg.GetHistorial()<<endl;
-<<<<<<< HEAD
+
 
     // Leemos el fichero
 
 
-        // añadimos el paciente a la lista
-        Pacientes_.push_back(reg);
+    // añadimos el paciente a la lista
+    Pacientes_.push_back(reg);
 
-=======
->>>>>>> 38822ec7c87abdcfbcad6acb7c0d5d2072c5600b
+
     // Cerramos el fichero
     file.close();
+    
+    cout<<"Paciente añadido."<<endl;
   }
 
-  // Mostramos la lista por pantalla
-  cout<<" Leyendo lista"<<endl;
-  for(i=Pacientes_.begin(); i!=Pacientes_.end(); i++){
-    cout<<"\tNombre: "<<i->GetNombre()<<endl;
-    cout<<"\tApellidos: "<<i->GetApellidos()<<endl;
-    cout<<"\tDireccion: "<<i->GetDireccion()<<endl;
-    cout<<"\tNacimiento: "<<i->GetNacimiento()<<endl;
-    cout<<"\tHospital: "<<i->GetHospital()<<endl;
-    cout<<"\tTelefono: "<<i->GetTelefono()<<endl;
-    cout<<"\tHistorial: "<<i->GetHistorial()<<endl;
-  }
 }
 
-void cargaLista(list <Paciente> p) {
+list <Paciente> cargaLista() {
 
+  list <Paciente> p;
   string nombre, apellidos, direccion, nacimiento, hospital, telefono, historial,aux;
   ifstream fichero;
   fichero.open("pacientes.txt");
@@ -117,21 +109,23 @@ void cargaLista(list <Paciente> p) {
   }
 
   fichero.close();
+  
+  return p;
 }
 
 int main(void){
 
-  list <Paciente> Pacientes_;
-  cargaLista (Pacientes_);
+  list <Paciente> Pacientes_ = cargaLista();
   string nombre, apellidos, direccion, nacimiento, hospital, telefono, historial, historial2;
   Paciente p1(nombre,apellidos,direccion, nacimiento,hospital,telefono,historial);
   Paciente P(p1);
   int opcion, opcion2;
   bool encontrado;
   string cad;
-
+  
   do{
 
+    system("clear");
     cout<<"MENU"<<endl;
     cout<<"0. Salir del programa"<<endl;
     cout<<"1. Buscar Paciente"<<endl;
@@ -146,14 +140,11 @@ int main(void){
 
       case 1:
 
-<<<<<<< HEAD
 
         cout<<"Nombre paciente= "<<endl;
-=======
-  		cout<<"Nombre paciente= "<<endl;
->>>>>>> 38822ec7c87abdcfbcad6acb7c0d5d2072c5600b
+	cin.get();
         cin>> nombre;
-        encontrado = P.BuscarPaciente(nombre);
+        encontrado = P.BuscarPaciente(nombre,Pacientes_);
         if(encontrado == true) cout<<"Paciente encontrado"<<endl;
         else cout<<"Error. Paciente no encontrado"<<endl;
         
@@ -165,7 +156,7 @@ int main(void){
 
         cout<<"Nombre paciente= "<<endl;
         cin>> nombre;
-        encontrado = P.BuscarPaciente(nombre);
+        encontrado = P.BuscarPaciente(nombre,Pacientes_);
         if(encontrado == true) cout<<p1<<endl;
         else cout<<"Error. Paciente no encontrado"<<endl;
 
@@ -173,11 +164,11 @@ int main(void){
 
       case 3:
 
-        cout<<"Nombre paciente= "<<endl;
+        cout<<"Nombre paciente: ";
         cin>> nombre;
-        encontrado = P.BuscarPaciente(nombre);
+        encontrado = P.BuscarPaciente(nombre,Pacientes_);
         if(encontrado == true) cout<<"Error. Paciente ya existente"<<endl;
-<<<<<<< HEAD
+
         else{
           p1.SetNombre(nombre);
           cout<<"Apellidos sin espacios: ";
@@ -201,42 +192,16 @@ int main(void){
           P.addPaciente(p1);
 
       }
-=======
-        else
-        {
-        	p1.SetNombre(nombre);
-        	cout<<"Apellidos sin espacios: ";
-        	cin>> apellidos;
-        	p1.SetApellidos(apellidos);
-        	cout<<"Direccion sin espacios: ";
-        	cin>> direccion;
-        	p1.SetDireccion(direccion);
-        	cout<<"Nacimiento paciente: ";
-        	cin >> nacimiento;
-        	p1.SetNacimiento(nacimiento);
-        	cout<<"Hospital privado/publico: ";
-        	cin >> hospital;
-        	p1.SetHospital(hospital);
-        	cout<<"Numero telefono= ";
-        	cin >> telefono;
-        	p1.SetTelefono(telefono);
-        	cout<<"Historial = ";
-        	cin >> historial;
-        	p1.SetHistorial(historial);
-        	P.addPaciente(p1);
-     	}
 
->>>>>>> 38822ec7c87abdcfbcad6acb7c0d5d2072c5600b
       break;
 
       case 4:
 
-		cout<<"Nombre paciente= "<<endl;
+	cout<<"Nombre paciente= "<<endl;
         cin >> nombre;
-        encontrado = P.BuscarPaciente(nombre);
+        encontrado = P.BuscarPaciente(nombre,Pacientes_);
         if(encontrado == true)
         {
-<<<<<<< HEAD
           do
           {
             cout<<"0. Volver al menu" <<endl;
@@ -295,7 +260,7 @@ int main(void){
             }
             cout<<p1<<endl;
           } while(opcion2 != 0);
-=======
+
         	do
         	{
         		cout<<"0. Volver al menu" <<endl;
@@ -362,13 +327,17 @@ int main(void){
             	cout<<p1<<endl;
 
           	} while(opcion2 != 0);
->>>>>>> 38822ec7c87abdcfbcad6acb7c0d5d2072c5600b
+
         }
         else cout<<"Error. Paciente no encontrado"<<endl;
 
       break;
     }
-
+    
+    cout<<"Pulsa cualquier tecla para continuar.";
+    cin.get();
+    cin.get();
+    
   } while(opcion!=0);
 
   return 0;
