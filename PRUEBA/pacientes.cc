@@ -112,6 +112,7 @@ void Paciente::MostrarPacientes()
         cout<<"Hoispital procedencia paciente: "<<i->GetHospital()<<endl;
         cout<<"Telefono paciente: "<<i->GetTelefono()<<endl;
         cout<<"Historia paciente: "<<i->GetHistorial()<<endl;
+        cout<<endl;
       }   
 }
 
