@@ -77,7 +77,8 @@ void Paciente::leePacientes()
 	fichero.close();	
 }
 
-Paciente::Paciente(string n, string a, string d, string fn, string ht, string t, string hm) { 
+Paciente::Paciente(string n, string a, string d, string fn, string ht, string t, string hm) 
+{ 
    nombre = n;
    apellidos = a;
    direccion = d;
@@ -113,6 +114,7 @@ void Paciente::MostrarPacientes()
         cout<<"Hoispital procedencia paciente: "<<i->GetHospital()<<endl;
         cout<<"Telefono paciente: "<<i->GetTelefono()<<endl;
         cout<<"Historia paciente: "<<i->GetHistorial()<<endl;
+        cout<<endl;
       }   
 }
 
@@ -205,4 +207,35 @@ void Paciente::modificarFichero(Paciente p)
     //Renombramos file2
     rename("aux.txt", "pacientes.txt");
   }
+}
+
+void Paciente::EliminarPaciente(string cad,Paciente p)
+{
+
+  cout<<"cad = "<<cad<<endl;
+  string aux;
+  ofstream file2("PACIENTE.txt");
+  ifstream file("pacientes.txt");
+  p.CambiarDatos(cad, p);
+  if(!file or !file2) cout<<"Error acceso fichero"<<endl;
+  else
+  {
+    cout<<"Acceso permitido al fichero"<<endl;
+    while(getline(file,aux,',') && !file.eof())
+    {
+
+      if(aux != cad) p.CambiarDatos(aux, p);
+      getline(file,aux);
+      
+    }
+
+    cout<<"Mostrando paciente cambiado"<<endl;
+    cout<<p<<endl;
+    file2<<p.GetNombre()+","+p.GetApellidos()+","+p.GetDireccion()+","+p.GetNacimiento()+","+
+    p.GetHospital()+","+p.GetTelefono()+","+p.GetHistorial()<<endl;
+    file2.close();
+    file.close();
+    rename("PACIENTE.txt", "pacientes.txt");
+  }
+
 }

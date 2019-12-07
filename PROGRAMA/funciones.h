@@ -68,7 +68,8 @@ class Paciente{
 		// Obtener numero de pacientes en la lista de pacientes
 		inline list <Paciente> GetPacientes(){ return Pacientes_;}
 		void CambiarDatos(string nombre, Paciente& reg);
-		
+		// Eliminar paciente
+		void EliminarPaciente(string cad,Paciente p);
 };
 
 ostream& operator<<(ostream &os, Paciente& reg);
