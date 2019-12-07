@@ -19,6 +19,8 @@ int main(void){
 
   Paciente P(p1);
 
+  //Cita c(P, "16:30-18:00", "07/12/2019", "revision");
+
   P.leePacientes();
 
   int opcion, opcion2;
@@ -56,7 +58,7 @@ int main(void){
       case 1:
 
   		  cout<<"Nombre paciente= ";
-    
+
         cin>> cad;
     
         cin.get();
@@ -327,6 +329,21 @@ int main(void){
         cin>>cad;
 
         cin.get();
+
+        encontrado = P.BuscarPaciente(cad);
+
+        if(encontrado == false)
+        {
+          cout<<"Paciente no encontrado"<<endl;
+        }
+
+        else
+        {
+          
+          P.EliminarPaciente(cad,P);
+          P.leePacientes();
+        }
+
 
       break;
 
