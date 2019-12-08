@@ -10,10 +10,6 @@
 #define MAX 100
 using namespace std;
 
-/*
-	Clase paciente
-*/
-
 class Paciente{
 
 	private:
@@ -31,41 +27,27 @@ class Paciente{
 
 		
 		Paciente(string, string, string, string, string, string, string);
-		// Modificamos los datos del fichero
 		void modificarFichero(Paciente p);
-		// Añadimos un paciente al fichero
 		void addPaciente(Paciente& reg);
-		// Mostramos la lista de pacientes
 		void MostrarPacientes();
-		// Funciones del nombre
 		string GetNombre(){return nombre;}
 		void SetNombre(string cad){ nombre = cad; }
-		// Funciones apellidos
 		string GetApellidos(){return apellidos;}
 		void SetApellidos(string cad){ apellidos = cad; }
-		// Funciones direccion
 		string GetDireccion(){return direccion;}
 		void SetDireccion(string cad){ direccion = cad; }
-		// Funciones nacimiento
 		string GetNacimiento(){return nacimiento;}
 		void SetNacimiento(string cad){ nacimiento = cad; }
-		// Funciones hospital
 		string GetHospital(){return hospital;}
 		void SetHospital(string cad){ hospital = cad; }
-		// Funciones telefono
 		string GetTelefono(){return telefono;}
 		void SetTelefono(string cad){ telefono = cad;}
-		// Funciones historial
 		string GetHistorial(){return historial;}
 		void SetHistorial(string cad){ historial = cad; }
-		// Buscar paciente por nombre
 		bool BuscarPaciente(string cad);
-		// Guardamos el fichero pacientes.txt en la lista de pacientes
 		void leePacientes();
-		// Obtener numero de pacientes en la lista de pacientes
 		inline list <Paciente> GetPacientes(){ return Pacientes_;}
 		void CambiarDatos(string nombre, Paciente& reg);
-		// Eliminar paciente
 		void EliminarPaciente(string cad,Paciente p);
 };
 
@@ -102,28 +84,45 @@ public:
 
 };
 
-class Tratamiento{
+class Tratamiento
+{
 
 	private:
 
-		char* tratamiento;
-		char* inicio;
-		char* dosis;
-		char* fin;
+		string tratamiento;
+		string inicio;
+		string dosis;
+		string fin;
 		list <Tratamiento> t;
+		Paciente p;
 
 	public:
 
-		inline char* GetTratamiento() const { return tratamiento;}
-		inline char* SetTratamiento(char* cad) { tratamiento = cad;}
-		inline char* GetInicio() const { return inicio;}
-		inline char* SetInicio(char* cad) { inicio = cad;}
-		inline char* GetFin() const { return fin; }
-		inline char* SetFin(char* cad) { fin = cad; }
-		inline char* GetDosis() const { return dosis;}
-		inline char* SetDosis(char* cad) { dosis = cad; }
+		inline string GetTratamiento() const { return tratamiento;}
+		inline string SetTratamiento(string cad) { tratamiento = cad;}
+		inline string GetInicio() const { return inicio;}
+		inline string SetInicio(string cad) { inicio = cad;}
+		inline string GetFin() const { return fin; }
+		inline string SetFin(string cad) { fin = cad; }
+		inline string GetDosis() const { return dosis;}
+		inline string SetDosis(string cad) { dosis = cad; }
 
-		Tratamiento(Paciente, char*, char*, char*, char*); //constructor de clase
+		inline Paciente getPaciente() const { return p;}
+
+		void addTratamiento(Paciente p, Tratamiento t);
+		
+		Tratamiento(Paciente P, string t, string i, string d, string f):p(P)
+		{
+			tratamiento = t;
+			inicio = i;
+			dosis = d;
+			fin = f;
+		}
+		
+
+
+
+		
 
 };
 
