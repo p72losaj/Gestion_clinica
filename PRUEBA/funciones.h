@@ -29,10 +29,7 @@ class Paciente{
 
 	public:
 
-		/*
-		Constructor de la clase
-		nombre, apellidos, direccion, nacimiento, hospital, telefono, historial
-		*/
+		
 		Paciente(string, string, string, string, string, string, string);
 		// Modificamos los datos del fichero
 		void modificarFichero(Paciente p);
@@ -74,6 +71,7 @@ class Paciente{
 
 ostream& operator<<(ostream &os, Paciente& reg);
 
+
 class Cita{
 
 private:
@@ -101,6 +99,31 @@ public:
 	inline string getMotivo() const { return motivo_; }
 	// Modificar motivo de la cita
 	inline string setMotivo(string cad) { motivo_ = cad;}
+
+};
+
+class Tratamiento{
+
+	private:
+
+		char* tratamiento;
+		char* inicio;
+		char* dosis;
+		char* fin;
+		list <Tratamiento> t;
+
+	public:
+
+		inline char* GetTratamiento() const { return tratamiento;}
+		inline char* SetTratamiento(char* cad) { tratamiento = cad;}
+		inline char* GetInicio() const { return inicio;}
+		inline char* SetInicio(char* cad) { inicio = cad;}
+		inline char* GetFin() const { return fin; }
+		inline char* SetFin(char* cad) { fin = cad; }
+		inline char* GetDosis() const { return dosis;}
+		inline char* SetDosis(char* cad) { dosis = cad; }
+
+		Tratamiento(Paciente, char*, char*, char*, char*); //constructor de clase
 
 };
 
