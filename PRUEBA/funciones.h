@@ -93,7 +93,6 @@ class Tratamiento
 		string inicio;
 		string dosis;
 		string fin;
-		list <Tratamiento> t;
 		Paciente p;
 
 	public:
@@ -109,8 +108,12 @@ class Tratamiento
 
 		inline Paciente getPaciente() const { return p;}
 
-		void addTratamiento(Paciente p, Tratamiento t);
+		void addTratamiento(Paciente& p, Tratamiento t);
+
+		int buscarFichero(string cad, string aux);
 		
+		void mostrarTratamiento(string cad);
+
 		Tratamiento(Paciente P, string t, string i, string d, string f):p(P)
 		{
 			tratamiento = t;

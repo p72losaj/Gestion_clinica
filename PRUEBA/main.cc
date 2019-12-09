@@ -54,23 +54,29 @@ int main(void){
 
       case 2:
 
-        cout<<" Nombre paciente a buscar: ";
+        
+        //cout<<"Funcion añadir tratamiento a un paciente"<<endl;
+        /*
+        cout<<"Nombre paciente a buscar: ";
         cin >> cad;
 
         encontrado = T.getPaciente().BuscarPaciente(cad);
 
         if(encontrado==true)
         {
-
+          cout<<"Paciente "<<cad<<" encontrado en pacientes.txt"<<endl;
           T.getPaciente().CambiarDatos(cad,P);
-          cout<<"Nombre paciente encontrado en fichero pacientes.txt"<<endl;
-
           T.addTratamiento(P,T);
         }
+        else cout<<"Paciente "<<cad<<" no encontrado en pacientes.txt"<<endl;
+        */
 
-        else cout<<"Paciente no encontrado en fichero pacientes.txt"<<endl;
 
-        cout<<"Numero de tratamientos: "<<T.GetTratamiento().size()<<endl;
+        cout<<"Funcion mostrar tratamiento de un paciente\n"<<endl;
+        
+        cout<<"Nombre paciente a buscar: ";
+        cin >> cad;
+        T.mostrarTratamiento(cad);
 
       break;
 
