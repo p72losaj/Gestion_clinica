@@ -13,7 +13,7 @@ int Tratamiento::buscarFichero(string n2, string aux)
 {
 	int encontrado = 0;
 	string aux2;
-	ifstream file(n2);
+	ifstream file(n2.c_str());
 	if(!file) cout<<"Error abrir fichero "<<n2<<" en formato lectura"<<endl;
 	else
 	{
@@ -38,8 +38,8 @@ void Tratamiento::addTratamiento(string nombre, string n1, string n2)
 	
 	string aux, cad;
 	int encontrado;
-	ifstream file(n1);
-	fstream file2(n2, ios::app);
+	ifstream file(n1.c_str());
+	fstream file2(n2.c_str(), ios::app);
 	if(!file or !file2) cout<<"Error acceso fichero"<<endl;
 
 	else{
@@ -89,7 +89,7 @@ void Tratamiento::mostrarTratamiento(string cad, string n2)
 {
 	string aux;
 	int encontrado;
-	ifstream file(n2);
+	ifstream file(n2.c_str());
 	if(!file) cout<<"Error acceso fichero "<<n2<<endl;
 	else
 	{
@@ -125,7 +125,7 @@ void Tratamiento::ModificarTratamiento(string nombre, string n2)
 	string aux, aux2;
 	int encontrado;
 	ofstream file2("fichero.txt");
-	ifstream file(n2);
+	ifstream file(n2.c_str());
 	if(!file or !file2) cout<<"Error acceso ficheros "<<endl;
 	else
 	{
@@ -188,7 +188,7 @@ void Tratamiento::eliminarTratamiento(string nombre,string n2)
 	string aux;
 	int encontrado;
 	ofstream file2("fichero.txt");
-	ifstream file(n2);
+	ifstream file(n2.c_str());
 	if(!file or !file2) cout<<"Error acceso ficheros "<<endl;
 	else
 	{
@@ -217,7 +217,3 @@ void Tratamiento::eliminarTratamiento(string nombre,string n2)
 	}
 }
 
-
-  
-  
-  

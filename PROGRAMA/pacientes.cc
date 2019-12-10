@@ -141,15 +141,11 @@ void Paciente::addPaciente(Paciente& reg)
 void Paciente::modificarFichero(Paciente p)
 {
   string aux;
-  // fichero principal
   ifstream file("pacientes.txt");
-  // Creamos un fichero auxiliar
   ofstream file2("aux.txt");
   if(!file2 or !file) cout<<"Error acceso fichero"<<endl;
   else
   {
-
-    // Recorremos file y guardamos en file2
     while(getline(file,aux,',') && !file.eof())
     {
       if(aux != p.GetNombre()) file2<<p.GetNombre()+",";
@@ -201,10 +197,8 @@ void Paciente::modificarFichero(Paciente p)
         file2<<p.GetHistorial()<<endl;
       }
     }
-    // Cerramos los ficheros
     file.close();
     file2.close();
-    //Renombramos file2
     rename("aux.txt", "pacientes.txt");
   }
 }

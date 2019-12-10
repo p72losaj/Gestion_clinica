@@ -299,10 +299,6 @@ int main(void){
           } while(opcion2 != 0);
 
           Paciente P(p1);
-
-          cout<<"Mostrando paciente modificado\n"<<endl;
-          
-          cout<<P<<endl;
           
           P.modificarFichero(P);
           
