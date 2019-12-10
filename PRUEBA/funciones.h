@@ -7,7 +7,7 @@
 #include <iostream>
 #include <cstring>
 #include <list>
-#define MAX 100
+
 using namespace std;
 
 class Paciente{
@@ -81,6 +81,15 @@ public:
 	inline string getMotivo() const { return motivo_; }
 	// Modificar motivo de la cita
 	inline string setMotivo(string cad) { motivo_ = cad;}
+	
+	void addCita(string, string, string);
+	
+	int buscaCita(string, string, string, string);
+	
+	void mostrarCitaDia(string,string);
+	void mostrarCitaPaciente(string,string);
+	//void modificarCita();
+	//void mostrarCita();
 
 };
 
