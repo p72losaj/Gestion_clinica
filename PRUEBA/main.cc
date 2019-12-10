@@ -14,6 +14,9 @@ int main(void){
 
   string cad;
 
+  string nf1 = "pacientes.txt";
+  string nf2 = "tratamiento.txt";
+
   string tr, in, d, f;
 
   Paciente p1( "Jaime","Lorenzo_Sanchez","c/AlcalaZamora-18/2/3",
@@ -54,9 +57,8 @@ int main(void){
 
       case 2:
 
-        
-        //cout<<"Funcion añadir tratamiento a un paciente"<<endl;
-        /*
+      //cout<<"Funcion añadir tratamiento a un paciente"<<endl;
+      /*
         cout<<"Nombre paciente a buscar: ";
         cin >> cad;
 
@@ -64,19 +66,28 @@ int main(void){
 
         if(encontrado==true)
         {
-          cout<<"Paciente "<<cad<<" encontrado en pacientes.txt"<<endl;
-          T.getPaciente().CambiarDatos(cad,P);
-          T.addTratamiento(P,T);
+          T.addTratamiento(cad,nf1,nf2);
         }
-        else cout<<"Paciente "<<cad<<" no encontrado en pacientes.txt"<<endl;
-        */
-
-
+        else cout<<"Paciente no encontrado en pacientes.txt"<<endl;
+       */
+        /*
         cout<<"Funcion mostrar tratamiento de un paciente\n"<<endl;
         
         cout<<"Nombre paciente a buscar: ";
         cin >> cad;
-        T.mostrarTratamiento(cad);
+        T.mostrarTratamiento(cad, nf2);  
+        */
+      
+        /*
+        cout<<"Funcion para modificar los datos del tratamiento actual de un paciente"<<endl;
+        cout<<"Nombre paciente a buscar: ";
+        cin >> cad;
+        T.ModificarTratamiento(cad,nf2);
+        */
+      cout<<"Funcion para cancelar un tratamiento"<<endl;
+      cout<<"Nombre del paciente a buscar: ";
+      cin >> cad;
+      T.eliminarTratamiento(cad,nf2);
 
       break;
 

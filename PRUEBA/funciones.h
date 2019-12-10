@@ -104,15 +104,19 @@ class Tratamiento
 		inline string GetFin() const { return fin; }
 		inline string SetFin(string cad) { fin = cad; }
 		inline string GetDosis() const { return dosis;}
-		inline string SetDosis(string cad) { dosis = cad; }
+		inline string SetDosis(int d) { dosis = d; }
 
 		inline Paciente getPaciente() const { return p;}
 
-		void addTratamiento(Paciente& p, Tratamiento t);
+		void addTratamiento(string nombre, string n1, string n2);
 
-		int buscarFichero(string cad, string aux);
+		int buscarFichero(string n2, string aux);
 		
-		void mostrarTratamiento(string cad);
+		void mostrarTratamiento(string cad, string n2);
+
+		void ModificarTratamiento(string nombre, string n2);
+
+		void eliminarTratamiento(string nombre,string n2);
 
 		Tratamiento(Paciente P, string t, string i, string d, string f):p(P)
 		{
@@ -120,12 +124,7 @@ class Tratamiento
 			inicio = i;
 			dosis = d;
 			fin = f;
-		}
-		
-
-
-
-		
+		}	
 
 };
 
