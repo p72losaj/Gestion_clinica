@@ -216,6 +216,8 @@ void Tratamiento::eliminarTratamiento(string nombre,string n2)
 		rename("fichero.txt","tratamiento.txt");
 	}
 }
+
+
   
   
   

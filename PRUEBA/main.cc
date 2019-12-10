@@ -58,7 +58,7 @@ int main(void){
       case 2:
 
       //cout<<"Funcion añadir tratamiento a un paciente"<<endl;
-      /*
+      
         cout<<"Nombre paciente a buscar: ";
         cin >> cad;
 
@@ -69,7 +69,7 @@ int main(void){
           T.addTratamiento(cad,nf1,nf2);
         }
         else cout<<"Paciente no encontrado en pacientes.txt"<<endl;
-       */
+       
         /*
         cout<<"Funcion mostrar tratamiento de un paciente\n"<<endl;
         
@@ -84,11 +84,12 @@ int main(void){
         cin >> cad;
         T.ModificarTratamiento(cad,nf2);
         */
+        
       cout<<"Funcion para cancelar un tratamiento"<<endl;
       cout<<"Nombre del paciente a buscar: ";
       cin >> cad;
       T.eliminarTratamiento(cad,nf2);
-
+  
       break;
 
     }
