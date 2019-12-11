@@ -120,7 +120,7 @@ void Paciente::MostrarPacientes()
 
 void Paciente::addPaciente(Paciente& reg)
 {
-  list <Paciente>::iterator i;
+  
   fstream file("pacientes.txt", ios::app);
   if(!file) cout<<"Error acceso fichero"<<endl;
   else{
