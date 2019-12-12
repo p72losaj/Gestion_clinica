@@ -5,181 +5,11 @@
 
 using namespace std;
 
-void Tratamiento::addTratamiento(string nombre, string n1, string n2)
-{
-  
-  string aux, cad;
-  int encontrado;
-  ifstream file(n1);
-  fstream file2(n2,ios::app);
-  if(!file or !file2) cout<<"Error acceso fichero"<<endl;
-  else{
-      while(getline(file,aux,',') && !file.eof())
-      { 
-      if(aux == nombre)
-      {
-        encontrado = buscarFichero(n2, aux);
-        if(encontrado == 0)
-        {
-          cout<<"Paciente "<<nombre<<" no encontrado en "<<n2<<endl;
-          file2<<aux + ",";
-          cout<<"Nombre del tratamiento: ";
-          cin>>cad;
-          file2<<cad+",";
-          cout<<"Fecha de inicio del tratamiento: ";
-          cin>>cad;
-          file2<<cad+",";
-          cout<<"Dosis del tratamiento en mg: ";
-          cin>>cad;
-          file2<<cad+",";
-          cout<<"Fecha de finalizacion del tratamiento: ";
-          cin>>cad;
-          file2<<cad<<endl;
-        }
-        else cout<<"Paciente encontrado en fichero "<<n2<<endl;
-      } 
-          getline(file,aux);
-      } 
-      file.close();
-      file2.close();
-   }
-}
-
-void Tratamiento::ModificarTratamiento(string nombre, string n2)
-{
-  string aux, aux2;
-  int encontrado;
-  ofstream file2("fichero.txt");
-  ifstream file(n2);
-  if(!file or !file2) cout<<"Error acceso ficheros "<<endl;
-  else
-  {
-    encontrado = buscarFichero(n2,nombre);
-    if(encontrado == 1)
-    {
-      while(getline(file,aux,',') && !file.eof())
-      {
-        if(aux == nombre)
-        {
-          file2<<aux + ",";
-          getline(file,aux,',');
-          file2<<aux+",";
-          getline(file,aux,',');
-          file2<<aux+",";
-          getline(file,aux,',');
-          cout<<"¿Desea modificar la dosis del tratamiento: y/n?"<<endl;
-          cin >> aux2;
-          if(aux2 == "y")
-          {
-            cout<<"Nueva dosis del tratamiento (en mg): ";
-            cin >> aux;
-          }
-          file2<<aux+",";
-          getline(file,aux);
-          cout<<"¿Desea modificar la fecha de finalizacion del tratamiento: y/n?"<<endl;
-          cin >> aux2;
-          if(aux2 == "y")
-          {
-            cout<<"Nueva fecha de finalizacion del tratamiento: ";
-            cin >> aux;
-          }
-
-          file2 << aux <<endl;
-          cout<<endl;         
-        }
-        else
-        {
-          file2<<aux + ",";
-          getline(file,aux,',');
-          file2<<aux+",";
-          getline(file,aux,',');
-          file2<<aux+",";
-          getline(file,aux,',');
-          file2<<aux+",";
-          getline(file,aux);
-          file2 << aux <<endl;
-        }
-      }
-    }
-
-    file.close();
-    file2.close();
-    rename("fichero.txt","tratamiento.txt");
-  }
-}
-
-void Tratamiento::mostrarTratamiento(string cad, string n2)
-{
-  string aux;
-  int encontrado;
-  ifstream file(n2);
-  if(!file) cout<<"Error acceso fichero "<<n2<<endl;
-  else
-  {
-    encontrado = buscarFichero(n2,cad);
-    if(encontrado == 1)
-    {
-      while(getline(file,aux,',') && !file.eof())
-      {
-        
-        if(aux == cad)
-        {
-          cout<<"\nNombre Paciente= "<<aux<<endl;
-          getline(file,aux,',');
-          cout<<"Nombre tratamiento=  "<<aux<<endl;
-          getline(file,aux,',');
-          cout<<"Fecha inicio tratamiento= "<<aux<<endl;
-          getline(file,aux,',');
-          cout<<"Dosis tratamiento en mg= "<<aux<<endl;
-          getline(file,aux);
-          cout<<"Fin tratamiento= "<<aux<<endl;
-          cout<<endl;
-        }
-
-        else getline(file,aux);
-      }
-    }
-  file.close();
-  }
-}
-
-void Tratamiento::eliminarTratamiento(string nombre,string n2)
-{
-  string aux;
-  int encontrado;
-  ofstream file2("fichero.txt");
-  ifstream file(n2.c_str());
-  if(!file or !file2) cout<<"Error acceso ficheros "<<endl;
-  else
-  {
-    encontrado = buscarFichero(n2,nombre);
-    if(encontrado == 1)
-    {
-      while(getline(file,aux,',') && !file.eof())
-      {
-        if(aux == nombre)
-        {
-          cout<<"Eliminando paciente"<<endl;
-          getline(file,aux);
-        }
-        else
-        {
-          file2<<aux + ",";
-          getline(file,aux);
-          file2<<aux<<endl;
-        }
-      }
-    }
-
-    file.close();
-    file2.close();
-    rename("fichero.txt","tratamiento.txt");
-  }
-}
 
 void Paciente::MenuT(Paciente &P,string f1,string f2,int encontrado)
 {
-    Tratamiento T(P," "," "," "," ");
+    Tratamiento T(P," "," ",0," ");
+    T.leeTratamientos(f2, P);
     string cad;
     int op;
     do
@@ -201,7 +31,8 @@ void Paciente::MenuT(Paciente &P,string f1,string f2,int encontrado)
         if(encontrado==true) 
         {
           cout<<"Añadiendo tratamiento al paciente"<<endl;
-          T.addTratamiento(cad,f1,f2);
+          T.addTratamiento(cad, f1, f2, P);
+          T.leeTratamientos(f2, P);
         }
         else cout<<"Paciente no encontrado"<<endl;
       }
@@ -210,20 +41,29 @@ void Paciente::MenuT(Paciente &P,string f1,string f2,int encontrado)
       {
         cout<<"Nombre paciente a buscar: ";
         cin >> cad;
-        T.mostrarTratamiento(cad, f2);  
+        T.mostrarTratamiento(cad, T); 
+        T.leeTratamientos(f2, P); 
       }
       if(op==3)
       {
         cout<<"Nombre paciente a buscar: ";
         cin >> cad;
-        T.ModificarTratamiento(cad,f2);
+        T.ModificarTratamiento(cad,f2,T);
+        T.Lista_Fichero(f2);
+        T.leeTratamientos(f2, P); 
       }
 
       if(op==4)
       {
         cout<<"Nombre del paciente a buscar: ";
         cin >> cad;
-        T.eliminarTratamiento(cad,f2);
+        if(T.eliminarTratamiento(cad) == 1)
+        {
+          cout<<" Tratamiento cancelado"<<endl;
+          T.Lista_Fichero(f2);
+        } 
+
+        T.leeTratamientos(f2, P); 
       }
 
     cout<<"Pulsa enter para continuar"<<endl;
@@ -234,7 +74,7 @@ void Paciente::MenuT(Paciente &P,string f1,string f2,int encontrado)
 }
 
 Paciente::Paciente(string n, string a, string d, string fn, string ht, string t, string hm) 
-  { 
+{ 
       nombre = n;
       apellidos = a;
       direccion = d;
@@ -242,11 +82,11 @@ Paciente::Paciente(string n, string a, string d, string fn, string ht, string t,
       hospital = ht;
       telefono = t;
       historial = hm;
-  }
+}
 
 
 void Paciente::Menu(Paciente& P, string f1, int encontrado)
-  {
+{
     
     int op;
     string nombre;
@@ -344,10 +184,10 @@ void Paciente::Menu(Paciente& P, string f1, int encontrado)
         cin.get();
 
       }while(op != 0);
-  }
+}
 
 void Paciente::MostrarPaciente(Paciente& reg) 
-  {
+{
 
     list <Paciente>:: iterator i;
     if(Pacientes_.empty()==true) cout<<" Lista vacia"<<endl;
@@ -368,10 +208,10 @@ void Paciente::MostrarPaciente(Paciente& reg)
                     }
               }
         }
-  }
+}
 
 istream& operator>>(istream &is, Paciente& reg)
-  {
+{
       cout<<" Introduciendo datos del paciente"<<endl;
       string cad;
       if(reg.GetNombre() == " ")
@@ -399,10 +239,10 @@ istream& operator>>(istream &is, Paciente& reg)
       is>>cad;
       reg.SetHistorial(cad);
       return is;
-  }
+}
 
 bool Paciente::BuscarPaciente(string cad)
-  {
+{
       bool encontrado = false;
       list <Paciente>:: iterator i;
       if(Pacientes_.empty()==true) cout<<" Lista vacia"<<endl;
@@ -413,10 +253,10 @@ bool Paciente::BuscarPaciente(string cad)
             }
         }
       return encontrado;  
-  }
+}
 
 void Paciente::AddPaciente(Paciente& reg, string f1)
-  {
+{
   
     fstream file(f1, ios::app);
     if(!file) cout<<"Error acceso fichero"<<endl;
@@ -433,10 +273,10 @@ void Paciente::AddPaciente(Paciente& reg, string f1)
           // Cerramos el fichero
           file.close(); 
       }
-  }
+}
 
 void Paciente::leePacientes(string f1)
-  {
+{
   
     list <Paciente>::iterator i;
     ifstream file(f1);
@@ -461,10 +301,10 @@ void Paciente::leePacientes(string f1)
         Pacientes_.push_back(aux);
       }
     file.close();  
-  }
+}
 
 void Paciente::ModificarLista(string f1,Paciente P)
-  {
+{
       list <Paciente>:: iterator i;
       string aux, nh;
       int val;
@@ -535,7 +375,7 @@ void Paciente::ModificarLista(string f1,Paciente P)
               } while(val != 0);
           }
         }
-  }
+}
 
 int Paciente::Menu2()
 {
@@ -554,7 +394,7 @@ int Paciente::Menu2()
 }
 
 void Paciente::ModificarFichero(string f1)
-  {
+{
       list <Paciente>:: iterator i;
       ofstream file(f1);
       if(!file) cout<<" Error abir fichero "<<f1<<endl;
@@ -572,10 +412,10 @@ void Paciente::ModificarFichero(string f1)
           }
           file.close();
       }
-  }
+}
 
 void Paciente::MostrarPacientes()
-  {
+{
       list <Paciente>:: iterator i;
       for(i=Pacientes_.begin(); i!=Pacientes_.end(); i++)
       {
@@ -587,7 +427,7 @@ void Paciente::MostrarPacientes()
           cout<<" Numero de telefono del paciente= "<<i->GetTelefono()<<endl;
           cout<<" Historial del paciente= "<<i->GetHistorial()<<endl;
       }
-  }
+}
 
 int Paciente::EliminarPaciente(string nombre)
   {
@@ -629,4 +469,165 @@ int Tratamiento::buscarFichero(string n2, string aux)
   }
   file.close();
   return encontrado;
+}
+
+void Tratamiento::leeTratamientos(string f2, Paciente &P)
+{
+  
+    list <Tratamiento>::iterator i;
+    ifstream file(f2);
+    string cadaux;
+    Tratamiento aux(P,"tratamiento", "inicio", 0,"fin");
+    t_.clear();
+    while(getline(file,cadaux,',') && !file.eof())
+      {
+        aux.SetNombreP(cadaux);
+        getline(file, cadaux, ',');
+        aux.SetTratamiento(cadaux);
+        getline(file, cadaux, ',');
+        aux.SetInicio(cadaux);
+        getline(file, cadaux, ',');
+        aux.SetDosis( atoi(cadaux.c_str()) );
+        getline(file, cadaux, '\n');
+        aux.SetFin(cadaux);
+        t_.push_back(aux);
+      }
+    file.close();  
+}
+
+void Tratamiento::MostrarTratamientos()
+{
+      list <Tratamiento>:: iterator i;
+      for(i=t_.begin(); i!=t_.end(); i++)
+      {
+          cout<<" \nNombre paciente= "<<i->GetNombreP()<<endl;
+          cout<<" Tratamiento del paciente= "<<i->GetTratamiento()<<endl;
+          cout<<" Fecha inicio del tratamiento= "<<i->GetInicio()<<endl;
+          cout<<" Dosis del tratamiento en mg= "<<i->GetDosis()<<endl;
+          cout<<" Fecha finalizacion del tratamiento= "<<i->GetFin()<<endl;
+      }
+}
+
+void Tratamiento::addTratamiento(string nombre, string n1, string n2, Paciente& P)
+{
+  list <Paciente>:: iterator i;
+  string aux, cad;
+  int encontrado, dosis;
+  ifstream file(n1);
+  fstream file2(n2,ios::app);
+  if(!file or !file2) cout<<"Error acceso fichero"<<endl;
+  else{
+      while(getline(file,aux,',') && !file.eof())
+      { 
+      if(aux == nombre)
+      {
+        encontrado = buscarFichero(n2, aux);
+        if(encontrado == 0)
+        {
+          file2<<aux + ",";
+          cout<<"Nombre del tratamiento: ";
+          cin>>cad;
+          file2<<cad+",";
+          cout<<"Fecha de inicio del tratamiento: ";
+          cin>>cad;
+          file2<<cad+",";
+          cout<<"Dosis del tratamiento en mg: ";
+          cin>>dosis;
+          file2<<dosis;
+          file2<<",";
+          cout<<"Fecha de finalizacion del tratamiento: ";
+          cin>>cad;
+          file2<<cad<<endl;
+        }
+      } 
+          getline(file,aux);
+      } 
+      file.close();
+      file2.close();
+   }
+}
+
+void Tratamiento::mostrarTratamiento(string cad, Tratamiento &T)
+{
+  list <Tratamiento>:: iterator i;
+  for(i=t_.begin(); i!=t_.end(); i++)
+  {
+    if(i->GetNombreP()==cad)
+    {
+      cout<<" Nombre paciente: "<<i->GetNombreP()<<endl;
+      cout<<" Tratamiento del paciente: "<<i->GetTratamiento()<<endl;
+      cout<<" Fecha de inicio del paciente: "<<i->GetInicio()<<endl;
+      cout<<" Dosis del tratamiento en mg: "<<i->GetDosis()<<endl;
+      cout<<" Fecha finalizacion del tratamiento: "<<i->GetFin()<<endl;
+    }
+  }
+}
+
+void Tratamiento::ModificarTratamiento(string nombre, string n2, Tratamiento &T)
+{
+
+  list <Tratamiento>:: iterator i;
+  string cad, aux;
+  int dosis;
+  for(i=t_.begin(); i!=t_.end(); i++)
+  {
+    if(i->GetNombreP() == nombre)
+    {
+        cout<<"dosis actual: "<<i->GetDosis()<<endl;
+        cout<<"¿Desea modificar la dosis del tratamiento: y/n ?"<<endl;
+        cin>>aux;
+        if(aux == "y")
+        {
+          cout<<"Nueva dosis del tratamiento: ";
+          cin>>dosis;
+          i->SetDosis(dosis);
+        }
+        cout<<"Fin tratamiento: "<<i->GetFin()<<endl;
+        cout<<"¿Desea modificar la fecha anterior: y/n ?"<<endl;
+        cin>>aux;
+        if(aux == "y")
+        {
+          cout<<" Introduce nueva fecha final del tratamiento: ";
+          cin>>cad;
+          i->SetFin(cad);
+        } 
+    }
+  }
+}
+
+void Tratamiento::Lista_Fichero(string n2)
+{
+  list <Tratamiento>:: iterator i;
+      ofstream file(n2);
+      if(!file) cout<<" Error abir fichero "<<n2<<endl;
+      else
+      {
+          for(i=t_.begin(); i!=t_.end(); i++)
+          {
+            file<<i->GetNombreP()+",";
+            file<<i->GetTratamiento()+",";
+            file<<i->GetInicio()+",";
+            file<<i->GetDosis();
+            file<<",";
+            file<<i->GetFin()<<endl;
+          }
+          file.close();
+      }
+}
+
+int Tratamiento::eliminarTratamiento(string nombre)
+{
+  list<Tratamiento>:: iterator i;
+  if(t_.empty()==true) cout<<" Lista de pacientes vacia"<<endl;
+  else
+    {
+      for(i=t_.begin();i!=t_.end();i++)
+        {
+          if(i->GetNombreP()==nombre)
+              {
+                t_.erase(i);
+                return 1;
+              }
+          }
+      }
 }
