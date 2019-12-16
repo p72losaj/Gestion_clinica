@@ -79,6 +79,8 @@ class Paciente
 
 			void MostrarPacientes();
 
+			void MenuL(Paciente &P, string fp, string fc, int encontrado);
+
 };
 
 // INTRODUCIR DATOS PACIENTE

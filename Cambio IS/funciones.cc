@@ -1,6 +1,6 @@
-
 #include "pacientes.h"
 #include "tratamiento.h"
+#include "citas.h"
 #include <list>
 
 using namespace std;
@@ -31,7 +31,7 @@ void Paciente::MenuT(Paciente &P,string f1,string f2,int encontrado)
         if(encontrado==true) 
         {
           cout<<"Añadiendo tratamiento al paciente"<<endl;
-          T.addTratamiento(cad, f1, f2, P);
+          T.addTratamiento(cad, f1, f2);
           T.leeTratamientos(f2, P);
         }
         else cout<<"Paciente no encontrado"<<endl;
@@ -508,9 +508,8 @@ void Tratamiento::MostrarTratamientos()
       }
 }
 
-void Tratamiento::addTratamiento(string nombre, string n1, string n2, Paciente& P)
+void Tratamiento::addTratamiento(string nombre, string n1, string n2)
 {
-  list <Paciente>:: iterator i;
   string aux, cad;
   int encontrado, dosis;
   ifstream file(n1);
@@ -630,4 +629,278 @@ int Tratamiento::eliminarTratamiento(string nombre)
               }
           }
       }
+}
+
+void Paciente::MenuL(Paciente &P, string fp, string fc, int encontrado)
+{
+  Cita C(P, " ", " ", " ");
+  C.leeCitas(fc,P);
+  int op;
+  string cad;
+  do
+    {
+      system("clear");
+      cout<<" 0. Exit"<<endl;
+      cout<<" 1. Añadir cita a un paciente"<<endl;
+      cout<<" 2. Buscar cita de un paciente"<<endl;
+      cout<<" 3. Buscar citas de un paciente"<<endl;
+      cout<<" 4. Modificar cita de un paciente"<<endl;
+      cout<<" 5. Cancelar cita de un paciente"<<endl;
+      cout<<"Elige opcion ";
+      cin>>op;
+      if(op==1) 
+      {
+        cout<<" Nombre paciente a buscar: ";
+        cin >> cad;
+        encontrado = C.getPaciente().BuscarPaciente(cad);
+        if(encontrado==true) 
+        {
+          cout<<" Añadiendo cita al paciente"<<endl;
+          C.addCita(cad,fp,fc);
+          C.leeCitas(fc,P);
+        }
+
+        else cout<<" Paciente no encontrado"<<endl;
+
+      }
+
+      if(op==2)
+      {
+
+          cout<<" Fecha a buscar: ";
+          cin >> cad;
+          C.mostrarCitaDia(cad);
+          
+      }
+
+      if(op==3)
+      {
+          cout<<" Nombre paciente a buscar: ";
+          cin >> cad;
+          C.mostrarCitaPaciente(cad);
+      }
+
+      if(op==4)
+      {
+          cout<<" Nombre paciente a buscar: ";
+          cin >> cad;
+          C.ModificarCita(cad);
+          C.ModificarFichero(fc);
+          C.leeCitas(fc,P);
+      }
+
+      if(op==5)
+      {
+          cout<<" Nombre paciente a buscar: ";
+          cin >> cad;
+          encontrado = C.CancelarCita(cad);
+          if(encontrado == 1) 
+          {
+              cout<<" Paciente eliminado"<<endl;
+              C.ModificarFichero(fc);
+              C.leeCitas(fc,P);
+              
+          }
+
+          else cout<<" Paciente no encontrado"<<endl;
+      }
+
+      cout<<"Pulsa enter para continuar"<<endl;
+      cin.get();
+      cin.get();
+    } while(op!=0);
+
+}
+
+void Cita::leeCitas(string nf, Paciente &P)
+{
+    list <Cita>::iterator i;
+    ifstream file(nf.c_str());
+    string cadaux;
+    Cita aux(P,"16:30-18:00", "07/12/2019","revision");
+    c_.clear();
+    while(getline(file,cadaux,',') && !file.eof())
+      {
+        aux.SetNombreP(cadaux);
+        getline(file, cadaux, ',');
+        aux.SetHora(cadaux);
+        getline(file, cadaux, ',');
+        aux.SetFecha(cadaux);
+        getline(file, cadaux, '\n');
+        aux.SetMotivo(cadaux);
+        c_.push_back(aux);
+      }
+    file.close(); 
+}
+
+void Cita::addCita(string nombre, string n1, string n2)
+{
+  
+  string aux,fecha,hora,motivo;
+  ifstream file(n1.c_str());
+  fstream file2(n2.c_str(), ios::app);
+  if(!file or !file2) cout<<"Error acceso fichero"<<endl;
+
+  else{
+
+        while(getline(file,aux,',') && !file.eof())
+        {
+        
+            if(aux == nombre)
+            {
+          
+              cout<<"Hora de la cita: ";
+              cin>>hora;
+              cout<<"Fecha de la cita: ";
+              cin>>fecha;
+              cout<<"Motivo de la cita: ";
+              cin>>motivo;
+
+              if(!buscaCita(nombre,hora,fecha)){
+          
+                  file2<<aux+",";
+                  file2<<hora+",";
+                  file2<<fecha+",";
+                  file2<<motivo<<endl;
+          
+              }
+        
+              else cout<<"Ya existe una cita en la fecha especificada."<<endl;  
+            }
+
+            getline(file,aux);
+          
+        } 
+
+      file.close();
+      file2.close();
+      
+  }
+
+}
+
+int Cita::buscaCita(string nombre, string hora, string fecha)
+{
+    list <Cita>:: iterator i;
+    for(i=c_.begin(); i!=c_.end(); i++)
+    {
+      if( (i->GetNombreP() == nombre) && (i->GetHora() == hora) && (i->GetFecha() == fecha))
+      {
+          return 1;
+      }
+    }
+
+    return 0;
+
+}
+
+void Cita::mostrarCitaDia(string cad)
+{
+    list <Cita>:: iterator i;
+    cout<<" Mostrando citas en la fecha indicada"<<endl;
+    for(i=c_.begin(); i!= c_.end(); i++)
+    {
+
+        if(i->GetFecha() == cad)
+        {
+
+            cout<<" Nombre del paciente= "<<i->GetNombreP()<<endl;
+            cout<<" Hora de la cita= "<<i->GetHora()<<endl;
+            cout<<" Motivo de la cita= "<<i->GetMotivo()<<endl;
+
+        }  
+
+    }
+}
+
+void Cita::mostrarCitaPaciente(string cad)
+{
+    list <Cita>:: iterator i;
+    cout<<" Mostrando citas del paciente"<<endl;
+    for(i=c_.begin(); i!= c_.end(); i++)
+    {
+
+        if(i->GetNombreP() == cad)
+        {
+
+            cout<<" Fecha de la cita= "<<i->GetFecha()<<endl;
+            cout<<" Hora de la cita= "<<i->GetHora()<<endl;
+            cout<<" Motivo de la cita= "<<i->GetMotivo()<<endl;
+
+        }  
+
+    }
+}
+
+void Cita::ModificarCita(string cad)
+{
+    list <Cita>:: iterator i;
+    string hora,fecha, motivo;
+    cout<<" Nueva fecha de la cita= ";
+    cin >> fecha;
+    cout<<" Nueva hora de la cita= ";
+    cin>> hora;
+    string aux;
+    for(i=c_.begin(); i!=c_.end(); i++)
+    {
+      
+      if(i->GetFecha() == fecha && i->GetHora() == hora) cout<<" Dia no valido"<<endl;
+
+      else
+      {
+
+        if(i->GetNombreP() == cad )
+        {
+          
+        cout<<" Hora actual: "<<i->GetHora()<<endl;
+        cout<<"¿Desea modificar la hora y/n ?"<<endl;
+        cin>>aux;
+        if(aux == "y") i->SetHora(hora);
+        cout<<" Fecha actual: "<<i->GetFecha()<<endl;
+        cout<<" ¿Desea modificar la fecha actual y/n ?"<<endl;
+        cin>>aux;
+        if(aux == "y") i->SetFecha(fecha);
+
+        }
+
+      }
+
+    }
+
+}
+
+void Cita::ModificarFichero(string cad)
+{
+    list<Cita>::iterator i;
+    ofstream file(cad);
+    if(!file) cout<<" Error abir fichero "<<cad<<endl;
+    else
+    {
+        for(i=c_.begin(); i!=c_.end(); i++)
+        { 
+            
+            file<<i->GetNombreP()+",";
+            file<<i->GetHora()+",";
+            file<<i->GetFecha()+",";
+            file<<i->GetMotivo()<<endl;
+        }
+
+        file.close();
+    }
+    
+}
+
+int Cita::CancelarCita(string cad)
+{
+    list <Cita>::iterator i;
+    for(i=c_.begin(); i!=c_.end(); i++)
+    {
+      if(i->GetNombreP() == cad)
+      {
+        c_.erase(i);
+        return 1;
+      } 
+    }
+
+    return 0;
 }

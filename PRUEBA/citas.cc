@@ -76,6 +76,7 @@ int Cita::buscaCita(string nombre, string hora, string fecha,string f) {
 	
 }
 
+
 void Cita::mostrarCitaDia(string cad, string f)
 {
 
@@ -152,6 +153,7 @@ void Cita::mostrarCitaPaciente(string cad, string f)
 	}
 }
 
+/*
 void Cita::ModificarCita(string paciente,string hora,string fecha,string f)
 {
 	string aux, aux2;

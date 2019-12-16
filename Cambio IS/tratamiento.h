@@ -34,7 +34,7 @@ class Tratamiento
 
 		void MostrarTratamientos();
 
-		void addTratamiento(string nombre, string n1, string n2, Paciente& P);
+		void addTratamiento(string nombre, string n1, string n2);
 
 		int buscarFichero(string n2, string aux);
 		

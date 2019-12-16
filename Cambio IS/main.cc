@@ -17,6 +17,7 @@ int main()
     int opcion, opcion2, encontrado;
     string f1 = "pacientes.txt";
     string f2 = "tratamiento.txt";
+    string f3 = "citas.txt";
 
     Paciente P( " "," "," "," "," "," "," ");
     P.leePacientes(f1);
@@ -27,6 +28,7 @@ int main()
         cout<<" Introduce una opcion: ";
         cin >> opcion;
         if(opcion == 1) P.Menu(P,f1,encontrado);
+        if(opcion == 2) P.MenuL(P,f1,f3,encontrado);
         if(opcion == 3) P.MenuT(P,f1,f2,encontrado);
         
       } while(opcion!=0);
