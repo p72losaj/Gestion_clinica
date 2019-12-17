@@ -32,6 +32,7 @@ Vamos a registrar los datos relativos a los pacientes, las citas, el tratamiento
 		- Fecha comienzo
 		- Dosis
 		- Fecha finalizacion
+		- Paciente asignado
 
 **Requisitos Funcionales por prioridad**
 
