@@ -2,15 +2,12 @@ PRACTICA 2
 
 	CASOS DE USO
 
-    Falta completar y corregir los casos de uso relativos a los requisitos que se mencionaron antes.
-
     Diagrama de casos de uso: 
 
     Todos los casos de uso deben tener uno o más actores principales asociados. Hay un par de ellos sin actor asociado. Si en el caso de uso habéis puesto como actor principal al “Usuario”, esto debe quedar reflejado en el diagrama, igual que con todos los demás casos. Falta completar los casos de uso relativos a los requisitos que se mencionaron antes, una vez se elaboren.
 
 PRACTICA 3
 
- 	
 
 	DIAGRAMAS DE SECUENCIA
 
