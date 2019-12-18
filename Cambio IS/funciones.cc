@@ -432,6 +432,7 @@ void Paciente::MostrarPacientes()
 int Paciente::EliminarPaciente(string nombre)
   {
       list<Paciente>:: iterator i;
+      string aux;
       if(Pacientes_.empty()==true) cout<<" Lista de pacientes vacia"<<endl;
       else
       {
@@ -439,9 +440,13 @@ int Paciente::EliminarPaciente(string nombre)
           {
               if(i->GetNombre()==nombre)
               {
-                cout<<" Nombre paciente "<<i->GetNombre()<<endl;
-                Pacientes_.erase(i);
-                return 1;
+                cout<<" ¿Desea eliminar al paciente "<<i->GetNombre()<<" y/n?"<<endl;
+                cin >> aux;
+                if( aux == "y") 
+                  {
+                    Pacientes_.erase(i);
+                    return 1;
+                  }
               }
           }
       }
