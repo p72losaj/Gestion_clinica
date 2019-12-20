@@ -5,18 +5,18 @@
 
 **Datos**: 
 
-	Variable: nP	Tipo: string			Descripcion: Nombre del paciente
-	Variable: aP	Tipo: string			Descripcion: Apellidos del paciente
-	Variable: dP	Tipo: string			Descripcion: Direccion del paciente
-	Variable: fP	Tipo: fecha				Descripcion: Fecha nacimiento del paciente
-	Variable: hP	Tipo: string			Descripcion: Tipo hospital procede el paciente
-	Variable: tP 	Tipo: string			Descripcion: Telefono del paciente
-	Variable: sP 	Tipo: texto				Descripcion: Historial medico del paciente
+	Variable: NombrePaciente	Tipo: string		Descripcion: Nombre del paciente
+	Variable: Apellidos			Tipo: string		Descripcion: Apellidos del paciente
+	Variable: Direccion			Tipo: string		Descripcion: Direccion del paciente
+	Variable: FechaNacimiento	Tipo: string		Descripcion: Fecha nacimiento paciente
+	Variable: Hospital			Tipo: string		Descripcion: Hospital procedencia paciente
+	Variable: Telefono		 	Tipo: string		Descripcion: Telefono del paciente
+	Variable: HistorialMedico 	Tipo: string		Descripcion: Historial medico del paciente
 
 **Métodos**:
 
 	- AñadirPaciente(): Funcion que añade un nuevo paciente
-	- ListaPacientes():	Funcion que muestra la lista de los pacientes
+	- MostrarPacientes():	Funcion que muestra la lista de los pacientes
 	- BuscarPaciente(): Funcion que busca a un paciente
 	- MostrarPaciente(): Funcion que muestra la informacion del paciente
 	- ModificarPaciente(): Funcion que modifica los datos personales del paciente
@@ -28,10 +28,10 @@
 
 **Datos**: 
 	
-	Variable: hC	Tipo: hora 		Descripcion: Hora de la cita
-	Variabe: fC 	Tipo: Fecha 	Descripcion: Fecha de la cita
-	Variable: mC 	Tipo: texto		Descripcion: Motivo de la cita
-	Variable: pC 	Tipo: string	Descripcion: Nombre del paciente citado
+	Variable: Hora				Tipo: string 	Descripcion: Hora de la cita
+	Variabe: Fecha 				Tipo: string 	Descripcion: Fecha de la cita
+	Variable: Motivo 			Tipo: string	Descripcion: Motivo de la cita
+	Variable: NombrePaciente 	Tipo: string	Descripcion: Nombre del paciente citado
 
 **Métodos**:
 
@@ -48,14 +48,14 @@
 
 **Datos**:
 
-	Variable: nM 	Tipo: string 		Descripción: Nombre del tratamiento
-	Variable: iM 	Tipo: Fecha 		Descripción: Fecha inicio del tratamiento
-	Variable: dM 	Tipo: int			Descripción: Dosis del tratamiento
-	Variable: fM 	Tipo: fecha 		Descripción: Fecha fin del tratamiento
+	Variable: NombreTratamiento 	Tipo: string 		Descripción: Nombre del tratamiento
+	Variable: FechaInicio 			Tipo: string 		Descripción: Fecha inicio del tratamiento
+	Variable: Dosis				 	Tipo: int			Descripción: Dosis del tratamiento
+	Variable: FechaFinalizacion 	Tipo: fecha 		Descripción: Fecha fin del tratamiento
 
 **Métodos**:
 
 	- AñadirTratamiento():		Funcion que añade a un paciente un nuevo tratamiento
-	- MostrarTratamiento():		Fucnion que muestra un tratamiento
+	- MostrarTratamiento():		Funcion que muestra un tratamiento
 	- ModificarTratamiento():	Funcion que modifica un tratamiento
 	- CancelarTratamiento():	Funcion que cancela un tratamiento

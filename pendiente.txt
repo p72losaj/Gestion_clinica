@@ -13,15 +13,6 @@ PRACTICA 3
 
     Todos los bloques alt, opt y loop deben tener su condición.
 
-
-	DIAGRAMA DE CLASES
-
-    Los nombres de los atributos deberían ser más descriptivos.
-
-    Las relaciones no se indican así. Mirad las diapositivas de la práctica.
-
-    El historial se ha definido como un atributo de tipo texto del paciente. Esto se puede hacer así pero tendréis que tener cuidado cuando hagáis la implementación porque si se permite editar como texto, es probable que no se cumplan algunos de los requisitos que se indicaron al inicio. Por ejemplo, el requisito que indicaba que no se pueden borrar entradas del historial.
-
 PRACTICA 4:
 
 Todas las historias deben tener al menos una tarea. 
