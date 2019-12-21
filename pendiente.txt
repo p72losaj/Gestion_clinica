@@ -3,19 +3,7 @@ PRACTICA 3
 
 	DIAGRAMAS DE SECUENCIA
 
-    El archivo markdown de diagramas de secuencia no es lo que se pedía. Se pedía un markdown que contuviera las imágenes de todos los diagramas.
-
-    Mensaje de error no debería ser un elemento del diagrama de secuencia. Es simplemente un mensaje.
-
-    En general se podrían haber simplificado más los diagramas de secuencia. No se pedía detallarlos tanto. Bastaría con poner Actor, Sistema y BBDD puesto que el sistema a desarrollar es bastante sencillo.
-
     Los bloques alt se deben crear utilizando el bloque existente en visual paradigm para ello (ej. diagrama de modificar tratamiento).
 
     Todos los bloques alt, opt y loop deben tener su condición.
-
-PRACTICA 4:
-
-Todas las historias deben tener al menos una tarea. 
-
-Los sprints no deben solaparse en tiempo. No son categorías, son periodos de tiempo dentro del desarrollo.
 
